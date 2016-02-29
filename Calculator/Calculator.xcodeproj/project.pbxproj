@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		7FC90CD90BE026F0CCF12F20 /* libPods-CalculatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C111A50C89B3BE092971405 /* libPods-CalculatorTests.a */; };
 		B97110601C84827600069433 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B971105F1C84827600069433 /* main.m */; };
-		B97110631C84827600069433 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B97110621C84827600069433 /* AppDelegate.m */; };
-		B97110661C84827600069433 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97110651C84827600069433 /* ViewController.m */; };
+		B97110631C84827600069433 /* MCAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B97110621C84827600069433 /* MCAAppDelegate.m */; };
+		B97110661C84827600069433 /* MCACalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97110651C84827600069433 /* MCACalculatorViewController.m */; };
 		B97110691C84827600069433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97110671C84827600069433 /* Main.storyboard */; };
 		B971106B1C84827600069433 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B971106A1C84827600069433 /* Assets.xcassets */; };
 		B971106E1C84827600069433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B971106C1C84827600069433 /* LaunchScreen.storyboard */; };
@@ -33,10 +33,10 @@
 		9C111A50C89B3BE092971405 /* libPods-CalculatorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CalculatorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B971105B1C84827600069433 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B971105F1C84827600069433 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B97110611C84827600069433 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B97110621C84827600069433 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B97110641C84827600069433 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B97110651C84827600069433 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B97110611C84827600069433 /* MCAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAAppDelegate.h; sourceTree = "<group>"; };
+		B97110621C84827600069433 /* MCAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCAAppDelegate.m; sourceTree = "<group>"; };
+		B97110641C84827600069433 /* MCACalculatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCACalculatorViewController.h; sourceTree = "<group>"; };
+		B97110651C84827600069433 /* MCACalculatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCACalculatorViewController.m; sourceTree = "<group>"; };
 		B97110681C84827600069433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B971106A1C84827600069433 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B971106D1C84827600069433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,10 +96,10 @@
 		B971105D1C84827600069433 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				B97110611C84827600069433 /* AppDelegate.h */,
-				B97110621C84827600069433 /* AppDelegate.m */,
-				B97110641C84827600069433 /* ViewController.h */,
-				B97110651C84827600069433 /* ViewController.m */,
+				B97110611C84827600069433 /* MCAAppDelegate.h */,
+				B97110621C84827600069433 /* MCAAppDelegate.m */,
+				B97110641C84827600069433 /* MCACalculatorViewController.h */,
+				B97110651C84827600069433 /* MCACalculatorViewController.m */,
 				B97110671C84827600069433 /* Main.storyboard */,
 				B971106A1C84827600069433 /* Assets.xcassets */,
 				B971106C1C84827600069433 /* LaunchScreen.storyboard */,
@@ -270,8 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B97110661C84827600069433 /* ViewController.m in Sources */,
-				B97110631C84827600069433 /* AppDelegate.m in Sources */,
+				B97110661C84827600069433 /* MCACalculatorViewController.m in Sources */,
+				B97110631C84827600069433 /* MCAAppDelegate.m in Sources */,
 				B97110601C84827600069433 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

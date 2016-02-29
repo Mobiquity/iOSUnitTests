@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  MCACalculatorViewController.h
 //  Calculator
 //
 //  Created by Brendan Carey on 2/29/16.
@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface MCACalculatorViewController : UIViewController
 
 
 @end

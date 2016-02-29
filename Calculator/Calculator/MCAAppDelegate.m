@@ -1,18 +1,18 @@
 //
-//  AppDelegate.m
+//  MCAAppDelegate.m
 //  Calculator
 //
 //  Created by Brendan Carey on 2/29/16.
 //  Copyright © 2016 Mobiquity, Inc. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "MCAAppDelegate.h"
 
-@interface AppDelegate ()
+@interface MCAAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation MCAAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

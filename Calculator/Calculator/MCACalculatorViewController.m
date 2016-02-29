@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  MCACalculatorViewController.m
 //  Calculator
 //
 //  Created by Brendan Carey on 2/29/16.
 //  Copyright © 2016 Mobiquity, Inc. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MCACalculatorViewController.h"
 
-@interface ViewController ()
+@interface MCACalculatorViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MCACalculatorViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
