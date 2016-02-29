@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FC90CD90BE026F0CCF12F20 /* libPods-CalculatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C111A50C89B3BE092971405 /* libPods-CalculatorTests.a */; };
 		B97110601C84827600069433 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B971105F1C84827600069433 /* main.m */; };
 		B97110631C84827600069433 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B97110621C84827600069433 /* AppDelegate.m */; };
 		B97110661C84827600069433 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97110651C84827600069433 /* ViewController.m */; };
@@ -27,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A9ACF163432DE7C7B37BF95 /* Pods-CalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D9BBD36DA82E0F72788A137 /* Pods-CalculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		9C111A50C89B3BE092971405 /* libPods-CalculatorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CalculatorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B971105B1C84827600069433 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B971105F1C84827600069433 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B97110611C84827600069433 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,18 +58,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FC90CD90BE026F0CCF12F20 /* libPods-CalculatorTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0828F4D06EA58CBFE01A4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C111A50C89B3BE092971405 /* libPods-CalculatorTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B97110521C84827600069433 = {
 			isa = PBXGroup;
 			children = (
 				B971105D1C84827600069433 /* Calculator */,
 				B97110771C84827600069433 /* CalculatorTests */,
 				B971105C1C84827600069433 /* Products */,
+				C63557D429AD25FFBFD25C0D /* Pods */,
+				0D0828F4D06EA58CBFE01A4D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +126,15 @@
 			path = CalculatorTests;
 			sourceTree = "<group>";
 		};
+		C63557D429AD25FFBFD25C0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A9ACF163432DE7C7B37BF95 /* Pods-CalculatorTests.debug.xcconfig */,
+				6D9BBD36DA82E0F72788A137 /* Pods-CalculatorTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B97110801C84827600069433 /* Build configuration list for PBXNativeTarget "CalculatorTests" */;
 			buildPhases = (
+				720F55BF34823A8B30AB2CA7 /* Check Pods Manifest.lock */,
 				B97110701C84827600069433 /* Sources */,
 				B97110711C84827600069433 /* Frameworks */,
 				B97110721C84827600069433 /* Resources */,
+				9291511F69F64B2805CC731B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +231,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		720F55BF34823A8B30AB2CA7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9291511F69F64B2805CC731B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B97110571C84827600069433 /* Sources */ = {
@@ -359,6 +418,7 @@
 		};
 		B97110811C84827600069433 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A9ACF163432DE7C7B37BF95 /* Pods-CalculatorTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CalculatorTests/Info.plist;
@@ -371,6 +431,7 @@
 		};
 		B97110821C84827600069433 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D9BBD36DA82E0F72788A137 /* Pods-CalculatorTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CalculatorTests/Info.plist;
@@ -400,6 +461,7 @@
 				B971107F1C84827600069433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B97110801C84827600069433 /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +470,7 @@
 				B97110821C84827600069433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
