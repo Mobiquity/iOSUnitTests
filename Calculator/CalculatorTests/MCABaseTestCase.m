@@ -8,6 +8,27 @@
 
 #import "MCABaseTestCase.h"
 
+#import <OHHTTPStubs/OHHTTPStubs.h>
+#import "MCAHTTPStubUtils.h"
+
+@interface MCABaseTestCase ()
+
+@end
+
 @implementation MCABaseTestCase
+
+- (void)setUp {
+    
+    [super setUp];
+    [MCAHTTPStubUtils interceptAllRequestsAndRespondWithStatusOkJsonResponse];
+    
+}
+
+- (void)tearDown {
+    
+    [OHHTTPStubs removeAllStubs];
+    [super tearDown];
+    
+}
 
 @end

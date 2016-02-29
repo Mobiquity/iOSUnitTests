@@ -14,7 +14,9 @@
 		B97110691C84827600069433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97110671C84827600069433 /* Main.storyboard */; };
 		B971106B1C84827600069433 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B971106A1C84827600069433 /* Assets.xcassets */; };
 		B971106E1C84827600069433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B971106C1C84827600069433 /* LaunchScreen.storyboard */; };
-		B97110791C84827600069433 /* CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B97110781C84827600069433 /* CalculatorTests.m */; };
+		B97110791C84827600069433 /* MCACalculatorViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B97110781C84827600069433 /* MCACalculatorViewControllerTests.m */; };
+		B97110851C84875400069433 /* MCABaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B97110841C84875400069433 /* MCABaseTestCase.m */; };
+		B97110881C848B6D00069433 /* MCAHTTPStubUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B97110871C848B6D00069433 /* MCAHTTPStubUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +44,12 @@
 		B971106D1C84827600069433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B971106F1C84827600069433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B97110741C84827600069433 /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B97110781C84827600069433 /* CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorTests.m; sourceTree = "<group>"; };
+		B97110781C84827600069433 /* MCACalculatorViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCACalculatorViewControllerTests.m; sourceTree = "<group>"; };
 		B971107A1C84827600069433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B97110831C84875400069433 /* MCABaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCABaseTestCase.h; sourceTree = "<group>"; };
+		B97110841C84875400069433 /* MCABaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCABaseTestCase.m; sourceTree = "<group>"; };
+		B97110861C848B6D00069433 /* MCAHTTPStubUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAHTTPStubUtils.h; sourceTree = "<group>"; };
+		B97110871C848B6D00069433 /* MCAHTTPStubUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAHTTPStubUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +126,22 @@
 		B97110771C84827600069433 /* CalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				B97110781C84827600069433 /* CalculatorTests.m */,
+				B97110781C84827600069433 /* MCACalculatorViewControllerTests.m */,
 				B971107A1C84827600069433 /* Info.plist */,
+				B97110831C84875400069433 /* MCABaseTestCase.h */,
+				B97110841C84875400069433 /* MCABaseTestCase.m */,
+				B97110891C848B7B00069433 /* Utilities */,
 			);
 			path = CalculatorTests;
+			sourceTree = "<group>";
+		};
+		B97110891C848B7B00069433 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B97110861C848B6D00069433 /* MCAHTTPStubUtils.h */,
+				B97110871C848B6D00069433 /* MCAHTTPStubUtils.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		C63557D429AD25FFBFD25C0D /* Pods */ = {
@@ -280,7 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B97110791C84827600069433 /* CalculatorTests.m in Sources */,
+				B97110851C84875400069433 /* MCABaseTestCase.m in Sources */,
+				B97110791C84827600069433 /* MCACalculatorViewControllerTests.m in Sources */,
+				B97110881C848B6D00069433 /* MCAHTTPStubUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
