@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 
+extern NSTimeInterval const TIMEOUT;
 
 @interface MCABaseTestCase : XCTestCase
 

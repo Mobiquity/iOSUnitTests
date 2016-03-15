@@ -11,6 +11,8 @@
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import "MCAHTTPStubUtils.h"
 
+NSTimeInterval const TIMEOUT = 5.0;
+
 @interface MCABaseTestCase ()
 
 @end
