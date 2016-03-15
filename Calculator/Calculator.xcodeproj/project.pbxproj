@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08086CFE1C91336B008CB57B /* MCACalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08086CFD1C91336B008CB57B /* MCACalculatorViewController.m */; };
-		08086D011C9133AD008CB57B /* MCAWolframAlphaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08086D001C9133AD008CB57B /* MCAWolframAlphaViewController.m */; };
 		081D777F1C96EE2F00B82FBA /* arithmetic.xml in Resources */ = {isa = PBXBuildFile; fileRef = 081D777C1C96EE2F00B82FBA /* arithmetic.xml */; };
 		081D77801C96EE2F00B82FBA /* euler.xml in Resources */ = {isa = PBXBuildFile; fileRef = 081D777D1C96EE2F00B82FBA /* euler.xml */; };
 		081D77811C96EE2F00B82FBA /* pi.xml in Resources */ = {isa = PBXBuildFile; fileRef = 081D777E1C96EE2F00B82FBA /* pi.xml */; };
 		0877E77C1C9271F90028992E /* MCAWolframAlphaOutputParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0877E77B1C9271F90028992E /* MCAWolframAlphaOutputParser.m */; };
+		08B529541C97CAE100B8F6E1 /* MCACalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B529511C97CAE100B8F6E1 /* MCACalculatorViewController.m */; };
+		08B529551C97CAE100B8F6E1 /* MCAWolframAlphaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B529531C97CAE100B8F6E1 /* MCAWolframAlphaViewController.m */; };
 		08F14B801C96495500366343 /* MCAWolframAlphaDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F14B7F1C96495500366343 /* MCAWolframAlphaDataSource.m */; };
 		08F14B831C96503700366343 /* MCAWolframAlphaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F14B821C96503700366343 /* MCAWolframAlphaTableViewCell.m */; };
 		08F14B861C96532100366343 /* MCAWolframAlphaSectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F14B851C96532100366343 /* MCAWolframAlphaSectionData.m */; };
@@ -42,15 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08086CFC1C91336B008CB57B /* MCACalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCACalculatorViewController.h; sourceTree = "<group>"; };
-		08086CFD1C91336B008CB57B /* MCACalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCACalculatorViewController.m; sourceTree = "<group>"; };
-		08086CFF1C9133AD008CB57B /* MCAWolframAlphaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAWolframAlphaViewController.h; sourceTree = "<group>"; };
-		08086D001C9133AD008CB57B /* MCAWolframAlphaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAWolframAlphaViewController.m; sourceTree = "<group>"; };
 		081D777C1C96EE2F00B82FBA /* arithmetic.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = arithmetic.xml; sourceTree = "<group>"; };
 		081D777D1C96EE2F00B82FBA /* euler.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = euler.xml; sourceTree = "<group>"; };
 		081D777E1C96EE2F00B82FBA /* pi.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = pi.xml; sourceTree = "<group>"; };
 		0877E77A1C9271F90028992E /* MCAWolframAlphaOutputParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAWolframAlphaOutputParser.h; sourceTree = "<group>"; };
 		0877E77B1C9271F90028992E /* MCAWolframAlphaOutputParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAWolframAlphaOutputParser.m; sourceTree = "<group>"; };
+		08B529501C97CAE100B8F6E1 /* MCACalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCACalculatorViewController.h; sourceTree = "<group>"; };
+		08B529511C97CAE100B8F6E1 /* MCACalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCACalculatorViewController.m; sourceTree = "<group>"; };
+		08B529521C97CAE100B8F6E1 /* MCAWolframAlphaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAWolframAlphaViewController.h; sourceTree = "<group>"; };
+		08B529531C97CAE100B8F6E1 /* MCAWolframAlphaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAWolframAlphaViewController.m; sourceTree = "<group>"; };
 		08F14B7E1C96495500366343 /* MCAWolframAlphaDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAWolframAlphaDataSource.h; sourceTree = "<group>"; };
 		08F14B7F1C96495500366343 /* MCAWolframAlphaDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAWolframAlphaDataSource.m; sourceTree = "<group>"; };
 		08F14B811C96503700366343 /* MCAWolframAlphaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAWolframAlphaTableViewCell.h; sourceTree = "<group>"; };
@@ -137,10 +137,10 @@
 		B96F48961C8D37E6003A2A2F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				08086CFF1C9133AD008CB57B /* MCAWolframAlphaViewController.h */,
-				08086D001C9133AD008CB57B /* MCAWolframAlphaViewController.m */,
-				08086CFC1C91336B008CB57B /* MCACalculatorViewController.h */,
-				08086CFD1C91336B008CB57B /* MCACalculatorViewController.m */,
+				08B529501C97CAE100B8F6E1 /* MCACalculatorViewController.h */,
+				08B529511C97CAE100B8F6E1 /* MCACalculatorViewController.m */,
+				08B529521C97CAE100B8F6E1 /* MCAWolframAlphaViewController.h */,
+				08B529531C97CAE100B8F6E1 /* MCAWolframAlphaViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -371,15 +371,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08B529551C97CAE100B8F6E1 /* MCAWolframAlphaViewController.m in Sources */,
 				B97110631C84827600069433 /* MCAAppDelegate.m in Sources */,
 				08FEDCF71C893F1500AD60AC /* MCAWolframAlphaQuery.m in Sources */,
 				B97110601C84827600069433 /* main.m in Sources */,
 				08F14B861C96532100366343 /* MCAWolframAlphaSectionData.m in Sources */,
+				08B529541C97CAE100B8F6E1 /* MCACalculatorViewController.m in Sources */,
 				08F14B831C96503700366343 /* MCAWolframAlphaTableViewCell.m in Sources */,
 				08F14B801C96495500366343 /* MCAWolframAlphaDataSource.m in Sources */,
 				0877E77C1C9271F90028992E /* MCAWolframAlphaOutputParser.m in Sources */,
-				08086D011C9133AD008CB57B /* MCAWolframAlphaViewController.m in Sources */,
-				08086CFE1C91336B008CB57B /* MCACalculatorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

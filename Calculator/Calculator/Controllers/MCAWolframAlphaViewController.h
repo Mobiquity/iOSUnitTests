@@ -2,7 +2,7 @@
 //  MCAWolframAlphaViewController.h
 //  Calculator
 //
-//  Created by Chris Nielubowicz on 3/3/16.
+//  Created by Brendan Carey on 3/6/16.
 //  Copyright © 2016 Mobiquity, Inc. All rights reserved.
 //
 
