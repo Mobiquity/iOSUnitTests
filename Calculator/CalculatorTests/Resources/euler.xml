@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<queryresult success='false'
+    error='false'
+    numpods='0'
+    datatypes=''
+    timedout=''
+    timedoutpods=''
+    timing='1.474'
+    parsetiming='0.173'
+    parsetimedout='false'
+    recalculate=''
+    id=''
+    host='http://www3.wolframalpha.com'
+    server='17'
+    related=''
+    version='2.6'
+    profile='EnterDoQuery:0.,StartWrap:1.47373'>
+ <didyoumeans count='2'>
+  <didyoumean score='0.636364' level='high'>euler&apos;s</didyoumean>
+  <didyoumean score='0.356305' level='medium'>s law</didyoumean>
+ </didyoumeans>
+</queryresult>

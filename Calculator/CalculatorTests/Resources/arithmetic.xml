@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<queryresult success='true'
+    error='false'
+    numpods='2'
+    datatypes=''
+    timedout=''
+    timedoutpods=''
+    timing='0.539'
+    parsetiming='0.256'
+    parsetimedout='false'
+    recalculate=''
+    id='MSPa19851b50hidif35gii2100002a6cdh63ddf6c338'
+    host='http://www5b.wolframalpha.com'
+    server='43'
+    related='http://www5b.wolframalpha.com/api/v2/relatedQueries.jsp?id=MSPa19861b50hidif35gii21000017hfdf3fef047i1c&amp;s=43'
+    version='2.6'
+    profile='EnterDoQuery:0.,StartWrap:0.538838'>
+ <pod title='Input'
+     scanner='Identity'
+     id='Input'
+     position='100'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext>3-7×54</plaintext>
+  </subpod>
+ </pod>
+ <pod title='Result'
+     scanner='Identity'
+     id='Result'
+     position='200'
+     error='false'
+     numsubpods='1'
+     primary='true'>
+  <subpod title=''
+      primary='true'>
+   <plaintext>False</plaintext>
+  </subpod>
+ </pod>
+</queryresult>

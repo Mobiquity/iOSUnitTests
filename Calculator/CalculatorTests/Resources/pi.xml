@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<queryresult success='true'
+    error='false'
+    numpods='8'
+    datatypes='MathematicalFunctionIdentity'
+    timedout='Numeric'
+    timedoutpods=''
+    timing='3.223'
+    parsetiming='0.15'
+    parsetimedout='false'
+    recalculate='http://www4f.wolframalpha.com/api/v2/recalc.jsp?id=MSPa5381ehi6c9h07hg614200003f944057fbia9b24&amp;s=15'
+    id='MSPa5391ehi6c9h07hg61420000608ff002b382i21e'
+    host='http://www4f.wolframalpha.com'
+    server='15'
+    related='http://www4f.wolframalpha.com/api/v2/relatedQueries.jsp?id=MSPa5401ehi6c9h07hg614200002a057c2cb5dc62c1&amp;s=15'
+    version='2.6'
+    profile='EnterDoQuery:0.,StartWrap:3.22344'>
+ <pod title='Input'
+     scanner='Identity'
+     id='Input'
+     position='100'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext>π</plaintext>
+  </subpod>
+ </pod>
+ <pod title='Decimal approximation'
+     scanner='Numeric'
+     id='DecimalApproximation'
+     position='200'
+     error='false'
+     numsubpods='1'
+     primary='true'>
+  <subpod title=''>
+   <plaintext>3.141592653589793238462643383279502884197169399375105820974…</plaintext>
+  </subpod>
+  <states count='1'>
+   <state name='More digits'
+       input='DecimalApproximation__More digits' />
+  </states>
+ </pod>
+ <pod title='Property'
+     scanner='Numeric'
+     id='Property'
+     position='300'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext>π is a transcendental number</plaintext>
+  </subpod>
+ </pod>
+ <pod title='Number line'
+     scanner='NumberLine'
+     id='NumberLine'
+     position='400'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext></plaintext>
+  </subpod>
+ </pod>
+ <pod title='Continued fraction'
+     scanner='ContinuedFraction'
+     id='ContinuedFraction'
+     position='500'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext>[3; 7, 15, 1, 292, 1, 1, 1, 2, 1, 3, 1, 14, 2, 1, 1, 2, 2, 2, 2, 1, 84, 2, 1, 1, 15, 3, 13, …]</plaintext>
+  </subpod>
+  <states count='2'>
+   <state name='More terms'
+       input='ContinuedFraction__More terms' />
+   <state name='Fraction form'
+       input='ContinuedFraction__Fraction form' />
+  </states>
+ </pod>
+ <pod title='Alternative representations'
+     scanner='MathematicalFunctionData'
+     id='AlternativeRepresentations:MathematicalFunctionIdentityData'
+     position='600'
+     error='false'
+     numsubpods='3'>
+  <subpod title=''>
+   <plaintext>π180 °</plaintext>
+  </subpod>
+  <subpod title=''>
+   <plaintext>π- log(-1)</plaintext>
+  </subpod>
+  <subpod title=''>
+   <plaintext>πcos^(-1)(-1)</plaintext>
+  </subpod>
+  <states count='1'>
+   <state name='More'
+       input='AlternativeRepresentations:MathematicalFunctionIdentityData__More' />
+  </states>
+  <infos count='4'>
+   <info text='log(x) is the natural logarithm'>
+    <link url='http://reference.wolfram.com/mathematica/ref/Log.html'
+        text='Documentation'
+        title='Mathematica' />
+    <link url='http://functions.wolfram.com/ElementaryFunctions/Log'
+        text='Properties'
+        title='Wolfram Functions Site' />
+    <link url='http://mathworld.wolfram.com/NaturalLogarithm.html'
+        text='Definition'
+        title='MathWorld' />
+   </info>
+   <info text='i is the imaginary unit'>
+    <link url='http://reference.wolfram.com/mathematica/ref/I.html'
+        text='Documentation'
+        title='Documentation' />
+    <link url='http://mathworld.wolfram.com/i.html'
+        text='Definition'
+        title='MathWorld' />
+   </info>
+   <info text='cos^(-1)(x) is the inverse cosine function'>
+    <link url='http://reference.wolfram.com/mathematica/ref/ArcCos.html'
+        text='Documentation'
+        title='Mathematica' />
+    <link url='http://functions.wolfram.com/ElementaryFunctions/ArcCos'
+        text='Properties'
+        title='Wolfram Functions Site' />
+    <link url='http://mathworld.wolfram.com/InverseCosine.html'
+        text='Definition'
+        title='MathWorld' />
+   </info>
+   <info>
+    <link url='http://functions.wolfram.com/Constants/Pi/27/ShowAll.html'
+        text='More information' />
+   </info>
+  </infos>
+ </pod>
+ <pod title='Series representations'
+     scanner='MathematicalFunctionData'
+     id='SeriesRepresentations:MathematicalFunctionIdentityData'
+     position='700'
+     error='false'
+     numsubpods='3'>
+  <subpod title=''>
+   <plaintext>π4 ∑_(k=0)^∞ (-1)^k/(2 k+1)</plaintext>
+  </subpod>
+  <subpod title=''>
+   <plaintext>π-2+2 ∑_(k=1)^∞ 2^k/(binomial(2 k, k))</plaintext>
+  </subpod>
+  <subpod title=''>
+   <plaintext>π∑_(k=0)^∞ (50 k-6)/(2^k binomial(3 k, k))</plaintext>
+  </subpod>
+  <states count='1'>
+   <state name='More'
+       input='SeriesRepresentations:MathematicalFunctionIdentityData__More' />
+  </states>
+  <infos count='2'>
+   <info text='(n
+m) is the binomial coefficient'>
+    <link url='http://reference.wolfram.com/mathematica/ref/Binomial.html'
+        text='Documentation'
+        title='Mathematica' />
+    <link url='http://functions.wolfram.com/GammaBetaErf/Binomial'
+        text='Properties'
+        title='Wolfram Functions Site' />
+    <link url='http://mathworld.wolfram.com/BinomialCoefficient.html'
+        text='Definition'
+        title='MathWorld' />
+   </info>
+   <info>
+    <link url='http://functions.wolfram.com/Constants/Pi/06/ShowAll.html'
+        text='More information' />
+   </info>
+  </infos>
+ </pod>
+ <pod title='Integral representations'
+     scanner='MathematicalFunctionData'
+     id='IntegralRepresentations:MathematicalFunctionIdentityData'
+     position='800'
+     error='false'
+     numsubpods='3'>
+  <subpod title=''>
+   <plaintext>π2∫_0^∞ 1/(t^2+1)t</plaintext>
+  </subpod>
+  <subpod title=''>
+   <plaintext>π4∫_0^1 sqrt(1-t^2)t</plaintext>
+  </subpod>
+  <subpod title=''>
+   <plaintext>π2∫_0^∞ (sin(t))/tt</plaintext>
+  </subpod>
+  <states count='1'>
+   <state name='More'
+       input='IntegralRepresentations:MathematicalFunctionIdentityData__More' />
+  </states>
+  <infos count='1'>
+   <info>
+    <link url='http://functions.wolfram.com/Constants/Pi/07/ShowAll.html'
+        text='More information' />
+   </info>
+  </infos>
+ </pod>
+ <assumptions count='1'>
+  <assumption type='Clash'
+      word='pi'
+      template='Assuming &quot;${word}&quot; is ${desc1}. Use as ${desc2} instead'
+      count='6'>
+   <value name='NamedConstant'
+       desc='a mathematical constant'
+       input='*C.pi-_*NamedConstant-' />
+   <value name='Character'
+       desc='a character'
+       input='*C.pi-_*Character-' />
+   <value name='MathWorld'
+       desc=' referring to a mathematical definition'
+       input='*C.pi-_*MathWorld-' />
+   <value name='MathWorldClass'
+       desc='a class of mathematical terms'
+       input='*C.pi-_*MathWorldClass-' />
+   <value name='Movie'
+       desc='a movie'
+       input='*C.pi-_*Movie-' />
+   <value name='Word'
+       desc='a word'
+       input='*C.pi-_*Word-' />
+  </assumption>
+ </assumptions>
+</queryresult>

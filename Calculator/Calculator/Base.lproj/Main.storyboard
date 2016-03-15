@@ -284,38 +284,102 @@
                             <constraint firstItem="xQK-pD-ml5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oVB-wT-7er"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="P0Q-D4-QLh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="250"/>
+            <point key="canvasLocation" x="1293" y="1038"/>
         </scene>
         <!--Wolfram Alpha View Controller-->
         <scene sceneID="BfF-ix-rei">
             <objects>
                 <viewController id="mEY-vw-zOz" customClass="MCAWolframAlphaViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qKt-hF-aJB"/>
-                        <viewControllerLayoutGuide type="bottom" id="iZJ-0u-AMV"/>
+                        <viewControllerLayoutGuide type="top" id="W3S-sg-edW"/>
+                        <viewControllerLayoutGuide type="bottom" id="soR-dF-uDo"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JLD-gy-s7U">
+                    <view key="view" contentMode="scaleToFill" id="y5z-Q4-co0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gni-2Q-WC9">
-                                <rect key="frame" x="20" y="20" width="113" height="30"/>
-                                <state key="normal" title="Calculator Mode"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you want to know?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3he-qh-axz">
+                                <rect key="frame" x="20" y="28" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cZ-O6-KsY">
+                                <rect key="frame" x="271" y="97" width="58" height="30"/>
+                                <state key="normal" title="Wolfram"/>
+                                <connections>
+                                    <action selector="sendToWolfram:" destination="mEY-vw-zOz" eventType="touchUpInside" id="yVf-FL-uFj"/>
+                                </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eFv-5I-MzK">
+                                <rect key="frame" x="20" y="135" width="560" height="465"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="wolfram" id="7YN-3H-HOp" customClass="MCAWolframAlphaTableViewCell">
+                                        <rect key="frame" x="0.0" y="50" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7YN-3H-HOp" id="gB1-Az-Gtt">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpn-ps-fNZ">
+                                                    <rect key="frame" x="8" y="11" width="544" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="wolframDataLabel" destination="Wpn-ps-fNZ" id="hGm-IT-Z7u"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Gni-2Q-WC9" firstAttribute="leading" secondItem="JLD-gy-s7U" secondAttribute="leadingMargin" id="NCP-be-oAj"/>
-                            <constraint firstItem="Gni-2Q-WC9" firstAttribute="top" secondItem="qKt-hF-aJB" secondAttribute="bottom" id="cfA-9H-i9r"/>
+                            <constraint firstItem="soR-dF-uDo" firstAttribute="top" secondItem="eFv-5I-MzK" secondAttribute="bottom" id="Bca-bl-MWi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3he-qh-axz" secondAttribute="trailing" id="JEa-eg-ipb"/>
+                            <constraint firstItem="3he-qh-axz" firstAttribute="centerX" secondItem="y5z-Q4-co0" secondAttribute="centerX" id="KQd-hd-eiT"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="3he-qh-axz" secondAttribute="leading" id="ajE-h7-Yna"/>
+                            <constraint firstItem="1cZ-O6-KsY" firstAttribute="top" secondItem="3he-qh-axz" secondAttribute="bottom" constant="39" id="eLf-hc-QDP"/>
+                            <constraint firstItem="3he-qh-axz" firstAttribute="top" secondItem="W3S-sg-edW" secondAttribute="bottom" constant="8" id="f1N-xu-3Dp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eFv-5I-MzK" secondAttribute="trailing" id="iJY-oX-EQP"/>
+                            <constraint firstItem="eFv-5I-MzK" firstAttribute="top" secondItem="1cZ-O6-KsY" secondAttribute="bottom" constant="8" id="kph-TX-yMs"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="eFv-5I-MzK" secondAttribute="leading" id="nfi-f1-x1V"/>
+                            <constraint firstItem="1cZ-O6-KsY" firstAttribute="centerX" secondItem="y5z-Q4-co0" secondAttribute="centerX" id="wq4-Hw-iOY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="wolframAlphaInput" destination="3he-qh-axz" id="pCD-xN-uvo"/>
+                        <outlet property="wolframOutput" destination="eFv-5I-MzK" id="i5i-xK-nXe"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QwE-Tb-hET" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vHL-gh-vNa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1166" y="250"/>
+            <point key="canvasLocation" x="1293" y="1745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OZb-da-B59">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wdo-xy-CXC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R2V-VP-osA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="c2K-BA-hYy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ka0-Kb-tDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="608" y="1038"/>
         </scene>
     </scenes>
 </document>
