@@ -8,6 +8,7 @@
 
 #import "MCAHTTPStubUtils.h"
 #import <OHHTTPStubs/OHHTTPStubs.h>
+#import <OHHTTPStubs/OHPathHelpers.h>
 
 @implementation MCAHTTPStubUtils
 
@@ -23,7 +24,7 @@
         return YES; // Stub ALL requests without any condition
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         
-        return [HttpStubUtils responseStubWithStatusOkJsonResponse];
+        return [MCAHTTPStubUtils responseStubWithStatusOkJsonResponse];
     }];
 }
 
@@ -32,8 +33,8 @@
     return [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES; // Stub ALL requests without any condition
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
-        
-        return [OHHTTPStubsResponse responseWithData:nil statusCode:500 headers:nil];
+       
+        return [OHHTTPStubsResponse responseWithData:[NSData data] statusCode:500 headers:nil];
     }];
 }
 
@@ -43,9 +44,8 @@
     return [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
-        // Stub it with our "wsresponse.json" stub file
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fileName,nil)
-                                                statusCode:200 headers:@{@"Content-Type":@"text/json"}];
+        NSString *path = OHPathForFileInBundle(fileName, [NSBundle bundleForClass:self]);
+        return [OHHTTPStubsResponse responseWithFileAtPath:path statusCode:200 headers:@{@"Content-Type":@"text/json"}];
     }];
 }
 
