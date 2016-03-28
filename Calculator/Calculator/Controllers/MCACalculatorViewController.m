@@ -8,11 +8,134 @@
 
 #import "MCACalculatorViewController.h"
 
+#import "MCACalculator.h"
+#import "MCAOperator.h"
+
+#import "NSString+MCAOperandStringUtils.h"
+
+typedef NS_ENUM(NSUInteger, MCAOperatorType) {
+    MCAOperatorTypeAddition,
+    MCAOperatorTypeSubtraction,
+    MCAOperatorTypeMultiplication,
+    MCAOperatorTypeDivision,
+    MCAOperatorTypeCount
+};
+
 @interface MCACalculatorViewController ()
+
+@property (nonatomic, weak) IBOutlet UILabel *calculatorDisplayLabel;
+@property (nonatomic, weak) IBOutlet UIButton *clearButton;
+
+@property (nonatomic, copy) NSString *operandString;
+@property (nonatomic, assign) BOOL expressionComplete;
+
+@property (nonatomic, strong) MCACalculator *calculator;
+@property (nonatomic, strong) NSMutableArray<MCAOperator *> *operators;
 
 @end
 
 @implementation MCACalculatorViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.calculator = [[MCACalculator alloc] init];
+    self.operators = [self createOperators];
+}
+
+- (NSMutableArray *)createOperators {
+    NSMutableArray *operatorArray = [NSMutableArray array];
+    NSDecimalNumberHandler *decimalNumberHandler = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundPlain scale:25 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+    
+    for (NSUInteger i = 0; i < MCAOperatorTypeCount; i++) {
+        switch(i) {
+            case MCAOperatorTypeAddition: {
+                [operatorArray addObject:[[MCAOperator alloc] initWithPrecedence:10 operationBlock:^NSDecimalNumber * _Nonnull(NSDecimalNumber * _Nonnull operand1, NSDecimalNumber * _Nonnull operand2) {
+                                                                      return [operand1 decimalNumberByAdding:operand2 withBehavior:decimalNumberHandler];
+                                                                  }]];
+                break;
+            }
+            case MCAOperatorTypeSubtraction: {
+                [operatorArray addObject:[[MCAOperator alloc] initWithPrecedence:10 operationBlock:^NSDecimalNumber * _Nonnull(NSDecimalNumber * _Nonnull operand1, NSDecimalNumber * _Nonnull operand2) {
+                                                                      return [operand1 decimalNumberBySubtracting:operand2 withBehavior:decimalNumberHandler];
+                                                                  }]];
+                break;
+            }
+            case MCAOperatorTypeMultiplication: {
+                [operatorArray addObject:[[MCAOperator alloc] initWithPrecedence:20 operationBlock:^NSDecimalNumber * _Nonnull(NSDecimalNumber * _Nonnull operand1, NSDecimalNumber * _Nonnull operand2) {
+                                                                      return [operand1 decimalNumberByMultiplyingBy:operand2 withBehavior:decimalNumberHandler];
+                                                                  }]];
+                break;
+            }
+            case MCAOperatorTypeDivision: {
+                [operatorArray addObject:[[MCAOperator alloc] initWithPrecedence:20 operationBlock:^NSDecimalNumber * _Nonnull(NSDecimalNumber * _Nonnull operand1, NSDecimalNumber * _Nonnull operand2) {
+                                                                      return [operand1 decimalNumberByDividingBy:operand2 withBehavior:decimalNumberHandler];
+                                                                  }]];
+                break;
+            }
+        }
+    }
+    return operatorArray;
+}
+
+- (void)setOperandString:(NSString *)operandString
+{
+    _operandString = operandString;
+    self.calculatorDisplayLabel.text = self.operandString ?: MCAZeroString;
+}
+
+- (IBAction)clearButtonTapped:(id)sender
+{
+    [self.calculator clearAllCalculatorHistory];
+    self.operandString = nil;
+    self.calculatorDisplayLabel.text = MCAZeroString;
+}
+
+- (IBAction)numericInputButtonTapped:(UIButton *)sender
+{
+    if (self.expressionComplete) {
+        // starting a new expression
+        [self.calculator clearAllCalculatorHistory];
+        self.expressionComplete = NO;
+    }
+    NSString *operandString = [(self.operandString ?: [NSString string]) mca_stringByAppendingNumericInputType:sender.tag];
+    
+    if (operandString.length <= MCAOperandMaxDigits && [operandString mca_toOperandNumber]) {
+        self.operandString = operandString;
+    }
+}
+
+- (IBAction)operatorButtonTapped:(UIButton *)sender
+{
+    if (self.operators.count > sender.tag) {
+        NSDecimalNumber *operand = [self.operandString mca_toOperandNumber];
+        NSDecimalNumber *result;
+        if (operand) {
+            result = [self.calculator pushOperator:self.operators[sender.tag] withOperand:operand];
+        } else {
+            [self.calculator clearAllCalculatorHistory];
+            self.expressionComplete = NO;
+            result = [self.calculator pushOperator:self.operators[sender.tag] withOperand:[self.calculatorDisplayLabel.text mca_toOperandNumber]];
+        }
+        self.operandString = nil;
+        self.calculatorDisplayLabel.text = [NSString mca_stringFromOperandNumber:result];
+    }
+}
+
+- (IBAction)equalsButtonTapped:(id)sender
+{
+    NSDecimalNumber *result;
+    NSDecimalNumber *operand = [self.operandString mca_toOperandNumber] ?: [self.calculatorDisplayLabel.text mca_toOperandNumber];
+    if (operand) {
+        result = [self.calculator pushOperand:operand];
+    } else {
+        result = [self.calculator evaluateExpressionFromHistory];
+    }
+    self.operandString = nil;
+    self.calculatorDisplayLabel.text = [NSString mca_stringFromOperandNumber:result];
+    self.expressionComplete = YES;
+}
+
+-(IBAction)unwindToCalculatorViewController:(UIStoryboardSegue *)sender {}
 
 @end
