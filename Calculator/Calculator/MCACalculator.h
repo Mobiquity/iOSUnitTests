@@ -11,6 +11,8 @@
 
 @interface MCACalculator : NSObject
 
+@property (nonatomic, readonly, getter=isExpressionComplete) BOOL expressionComplete;
+
 - (NSDecimalNumber *)pushOperator:(MCAOperator *)operator withOperand:(NSDecimalNumber *)operand;
 - (NSDecimalNumber *)pushOperand:(NSDecimalNumber *)operand;
 - (void)pushOperator:(MCAOperator *)operator;

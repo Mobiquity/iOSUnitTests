@@ -66,7 +66,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="numericInputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ky-oV-mDL"/>
+                                                    <action selector="signChangeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wvN-r4-9Sx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8D-tU-GRs" userLabel="Percent">

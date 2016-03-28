@@ -11,6 +11,7 @@
 
 @interface MCACalculator ()
 
+@property (nonatomic, assign, readwrite, getter=isExpressionComplete) BOOL expressionComplete;
 @property (nonatomic, strong) NSMutableArray<NSDecimalNumber *> *operands;
 @property (nonatomic, strong) NSMutableArray<MCAOperator *> *operators;
 
@@ -71,6 +72,7 @@
 
 - (NSDecimalNumber *)evaluateExpressionFromHistory
 {
+    self.expressionComplete = YES;
     return [self simplifyOperators:[self.operators mutableCopy] forOperands:[self.operands mutableCopy]];
 }
 
@@ -96,6 +98,7 @@
 
 - (void)clearAllCalculatorHistory
 {
+    self.expressionComplete = NO;
     [self.operators removeAllObjects];
     [self.operands removeAllObjects];
 }

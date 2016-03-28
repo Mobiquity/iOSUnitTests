@@ -27,7 +27,6 @@ typedef NS_ENUM(NSUInteger, MCAOperatorType) {
 @property (nonatomic, weak) IBOutlet UIButton *clearButton;
 
 @property (nonatomic, copy) NSString *operandString;
-@property (nonatomic, assign) BOOL expressionComplete;
 
 @property (nonatomic, strong) MCACalculator *calculator;
 @property (nonatomic, strong) NSMutableArray<MCAOperator *> *operators;
@@ -93,15 +92,29 @@ typedef NS_ENUM(NSUInteger, MCAOperatorType) {
 
 - (IBAction)numericInputButtonTapped:(UIButton *)sender
 {
-    if (self.expressionComplete) {
-        // starting a new expression
-        [self.calculator clearAllCalculatorHistory];
-        self.expressionComplete = NO;
-    }
     NSString *operandString = [(self.operandString ?: [NSString string]) mca_stringByAppendingNumericInputType:sender.tag];
+    [self handleInput:sender.tag baseString:operandString];
+}
+
+- (IBAction)signChangeButtonTapped:(UIButton *)sender
+{
+    BOOL startingNewExpression = self.calculator.isExpressionComplete;
+    NSString *operandString = [(self.operandString ?: self.calculatorDisplayLabel.text) mca_stringByAppendingNumericInputType:sender.tag];
+    [self handleInput:MCANumericInputSignChange baseString:operandString];
     
-    if (operandString.length <= MCAOperandMaxDigits && [operandString mca_toOperandNumber]) {
-        self.operandString = operandString;
+    if (startingNewExpression) {
+        [self.calculator pushOperand:[self.operandString mca_toOperandNumber]];
+    }
+}
+
+- (void)handleInput:(MCANumericInput)inputType baseString:(NSString *)baseString
+{
+    if (baseString.length <= MCAOperandMaxDigits && [baseString mca_toOperandNumber]) {
+        if (self.calculator.isExpressionComplete) {
+            // starting a new expression
+            [self.calculator clearAllCalculatorHistory];
+        }
+        self.operandString = baseString;
     }
 }
 
@@ -114,7 +127,6 @@ typedef NS_ENUM(NSUInteger, MCAOperatorType) {
             result = [self.calculator pushOperator:self.operators[sender.tag] withOperand:operand];
         } else {
             [self.calculator clearAllCalculatorHistory];
-            self.expressionComplete = NO;
             result = [self.calculator pushOperator:self.operators[sender.tag] withOperand:[self.calculatorDisplayLabel.text mca_toOperandNumber]];
         }
         self.operandString = nil;
@@ -133,7 +145,6 @@ typedef NS_ENUM(NSUInteger, MCAOperatorType) {
     }
     self.operandString = nil;
     self.calculatorDisplayLabel.text = [NSString mca_stringFromOperandNumber:result];
-    self.expressionComplete = YES;
 }
 
 -(IBAction)unwindToCalculatorViewController:(UIStoryboardSegue *)sender {}
