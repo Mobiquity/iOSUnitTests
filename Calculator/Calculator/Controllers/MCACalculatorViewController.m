@@ -13,14 +13,6 @@
 
 #import "NSString+MCAOperandStringUtils.h"
 
-typedef NS_ENUM(NSUInteger, MCAOperatorType) {
-    MCAOperatorTypeAddition,
-    MCAOperatorTypeSubtraction,
-    MCAOperatorTypeMultiplication,
-    MCAOperatorTypeDivision,
-    MCAOperatorTypeCount
-};
-
 @interface MCACalculatorViewController ()
 
 @property (nonatomic, weak) IBOutlet UILabel *calculatorDisplayLabel;
