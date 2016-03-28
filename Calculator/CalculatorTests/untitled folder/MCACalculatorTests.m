@@ -11,6 +11,7 @@
 
 @interface MCACalculator (Testing)
 
+@property (nonatomic, assign, readwrite, getter=isExpressionComplete) BOOL expressionComplete;
 @property (nonatomic, strong) NSMutableArray<NSDecimalNumber *> *operands;
 @property (nonatomic, strong) NSMutableArray<MCAOperator *> *operators;
 
@@ -97,6 +98,32 @@
     
     //Assert
     XCTAssertEqual(expected, actual, @"Expected clear calculator history to empty calculator operators array.");
+}
+
+- (void)testMCACalculator_clearAllCalculatorHistory_shouldSetExpressionCompleteNO
+{
+    // Arrange
+    self.calculator.expressionComplete = YES;
+    [self.calculator clearAllCalculatorHistory];
+    
+    // Act
+    BOOL expressionComplete = self.calculator.isExpressionComplete;
+    
+    //Assert
+    XCTAssertFalse(expressionComplete, @"Expected clear calculator history to set expression complete to NO.");
+}
+
+- (void)testMCACalculator_evaluateExpressionFromHistory_shouldSetExpressionCompleteYES
+{
+    // Arrange
+    self.calculator.expressionComplete = NO;
+    [self.calculator evaluateExpressionFromHistory];
+    
+    // Act
+    BOOL expressionComplete = self.calculator.isExpressionComplete;
+    
+    //Assert
+    XCTAssertTrue(expressionComplete, @"Expected evaluating expression to set expression complete to YES.");
 }
 
 @end

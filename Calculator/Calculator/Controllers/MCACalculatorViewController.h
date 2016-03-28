@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MCACalculatorViewController : UIViewController
+typedef NS_ENUM(NSUInteger, MCAOperatorType) {
+    MCAOperatorTypeAddition,
+    MCAOperatorTypeSubtraction,
+    MCAOperatorTypeMultiplication,
+    MCAOperatorTypeDivision,
+    MCAOperatorTypeCount
+};
 
+@interface MCACalculatorViewController : UIViewController
 
 @end
 

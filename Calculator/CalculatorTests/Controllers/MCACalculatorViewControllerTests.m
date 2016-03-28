@@ -19,9 +19,12 @@
 @property (nonatomic, copy) NSString *operandString;
 @property (nonatomic, weak) IBOutlet UILabel *calculatorDisplayLabel;
 @property (nonatomic, strong) MCACalculator *calculator;
+@property (nonatomic, strong) NSMutableArray<MCAOperator *> *operators;
 
 - (IBAction)numericInputButtonTapped:(id)sender;
 - (IBAction)clearButtonTapped:(id)sender;
+- (IBAction)operatorButtonTapped:(UIButton *)sender;
+- (NSMutableArray *)createOperators;
 
 @end
 
@@ -182,11 +185,14 @@
     [[mockLabel reject] setText:OCMOCK_ANY];
     self.calculatorViewController.calculatorDisplayLabel = mockLabel;
     
-    // Act
+    self.calculatorViewController.operators = [self.calculatorViewController createOperators];
     
+    // Act
+    UIButton *unknownOperatorButton = [[UIButton alloc] init];
+    unknownOperatorButton.tag = MCAOperatorTypeCount;
     
     //Assert
-    
+    [self.calculatorViewController operatorButtonTapped:unknownOperatorButton];
 }
 
 
