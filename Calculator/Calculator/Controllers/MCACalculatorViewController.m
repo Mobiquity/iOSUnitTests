@@ -12,6 +12,7 @@
 #import "MCAOperator.h"
 
 #import "NSString+MCAOperandStringUtils.h"
+#import "MCASquarer.h"
 
 @interface MCACalculatorViewController ()
 
@@ -144,10 +145,15 @@
 #pragma mark - New Testable Action
 
 -(IBAction)exponentialButtonTapped:(id)sender {
-    
-    // TODO: Create MCASquarer from operand string
-    // TODO: Create and display alert with squared result and funny text
-
+    MCASquarer *squarer = [[MCASquarer alloc] initWithString:self.calculatorDisplayLabel.text];
+    NSString *alertString = [squarer formattedSquaredString];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Be there or ..."
+                                                                   message:alertString
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end

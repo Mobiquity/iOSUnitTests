@@ -312,7 +312,7 @@
                                         <rect key="frame" x="0.0" y="488" width="600" height="48"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqY-GW-GEl">
-                                                <rect key="frame" x="0.0" y="0.0" width="448" height="48"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="480" height="48"/>
                                                 <color key="backgroundColor" red="0.98431372549999996" green="0.72156862749999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                                 <state key="normal" title="Wolfram Mode">
@@ -323,10 +323,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfL-SX-AbO" userLabel="Squared">
-                                                <rect key="frame" x="450" y="0.0" width="150" height="48"/>
+                                                <rect key="frame" x="482" y="0.0" width="118" height="48"/>
                                                 <color key="backgroundColor" red="0.98431372549999996" green="0.72156862749999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                                <state key="normal" title="&lt;Your Test&gt;">
+                                                <state key="normal" title="Square it!">
                                                     <color key="titleColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
                                                 </state>
                                                 <connections>
