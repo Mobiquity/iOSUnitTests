@@ -15,25 +15,37 @@
 
 @interface MCAColorChangerTests : MCABaseTestCase
 
+@property (nonatomic, retain) MCAColorChanger *changer;
+@property (nonatomic, assign) BOOL previousState;
+
 @end
 
 @implementation MCAColorChangerTests
 
+- (void)setUp {
+    [super setUp];
+    self.changer = [[MCAColorChanger alloc] init];
+    self.previousState = self.changer.changeColors;
+}
+
+- (void)tearDown {
+    // Ensure that we don't change our setting from the original!
+    [self.changer setChangeColors:self.previousState];
+    XCTAssertEqual(self.previousState, self.changer.changeColors);
+    [super tearDown];
+}
+
 - (void)testToggleStateTrue {
-    MCAColorChanger *changer = [[MCAColorChanger alloc] init];
-    XCTAssertFalse(changer.changeColors);
-    [changer setChangeColors:YES];
-    XCTAssertTrue(changer.changeColors);
-    XCTAssertEqualObjects([changer currentColor], [changer onColor]);
+    [self.changer setChangeColors:YES];
+    XCTAssertTrue(self.changer.changeColors);
+    XCTAssertEqualObjects([self.changer currentColor], [self.changer onColor]);
 
 }
 
 - (void)testToggleStateFalse {
-    MCAColorChanger *changer = [[MCAColorChanger alloc] init];
-    XCTAssertTrue(changer.changeColors);
-    [changer setChangeColors:NO];
-    XCTAssertFalse(changer.changeColors);
-    XCTAssertEqualObjects([changer currentColor], [changer offColor]);
+    [self.changer setChangeColors:NO];
+    XCTAssertFalse(self.changer.changeColors);
+    XCTAssertEqualObjects([self.changer currentColor], [self.changer offColor]);
 }
 
 @end
