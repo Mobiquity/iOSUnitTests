@@ -31,4 +31,12 @@
     return self;
 }
 
+- (NSDecimalNumber *)squared {
+    return [self.operand decimalNumberByRaisingToPower:2];
+}
+
+- (NSString *)formattedSquaredString {
+    return [NSString stringWithFormat:@"Be squared: %@", [self squared]];
+}
+
 @end
