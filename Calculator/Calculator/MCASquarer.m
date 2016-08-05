@@ -17,9 +17,17 @@
 @implementation MCASquarer
 
 - (id)initWithString:(NSString *)operand {
+    if (operand == nil || [operand isKindOfClass:[NSString class]] == false) {
+        return nil;
+    }
+    
     if (self = [super init]) {
         _operand = [NSDecimalNumber decimalNumberWithString:operand];
+        if (_operand == nil || [_operand isEqualToNumber:[NSDecimalNumber notANumber]]) {
+            return nil;
+        }
     }
+    
     return self;
 }
 
