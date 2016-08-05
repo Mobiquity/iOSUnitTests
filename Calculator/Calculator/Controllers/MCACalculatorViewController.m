@@ -143,6 +143,10 @@
 
 #pragma mark - New Testable Action
 
+-(IBAction)changeColorTapped:(id)sender {
+    
+}
+
 // TODO: Add IBAction for your testable action
 // TODO: Add testable classes and methods
 
