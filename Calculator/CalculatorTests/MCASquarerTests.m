@@ -15,6 +15,8 @@
 
 @implementation MCASquarerTests
 
+#pragma mark - Test Initialization
+
 - (void)testInitializationWithValidInput {
     MCASquarer *squarer = [[MCASquarer alloc] initWithString:@"3.14"];
     XCTAssertNotNil(squarer, @"MCASquarer should be initialized, not nil.");
@@ -39,6 +41,18 @@
 - (void)testInitializationWithGarbageInput {
     MCASquarer *squarer = [[MCASquarer alloc] initWithString:((NSString *)@{@"dictionary" : @"value"})];
     XCTAssertNil(squarer, @"MCASquarer should be not initialized");
+}
+
+#pragma mark - Test Operation
+
+- (void)testSimpleSquare {
+    MCASquarer *squarer = [[MCASquarer alloc] initWithString:@"2"];
+    XCTAssertEqualObjects([squarer squared], [NSDecimalNumber numberWithInt:4]);
+}
+
+- (void)testSimpleSquareFormattedString {
+    MCASquarer *squarer = [[MCASquarer alloc] initWithString:@"2"];
+    XCTAssertEqualObjects([squarer formattedSquaredString], @"Be squared: 4");
 }
 
 @end
