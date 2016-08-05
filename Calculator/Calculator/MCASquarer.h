@@ -10,11 +10,11 @@
 
 @interface MCASquarer : NSObject
 
-@property (nonatomic, strong, readonly) NSDecimalNumber *operand;
+@property (nonnull, nonatomic, strong, readonly) NSDecimalNumber *operand;
 
-- (id)initWithString:(NSString *)operand;
+- (nullable id)initWithString:(nullable NSString *)operand;
 
-- (NSDecimalNumber *)squared;
-- (NSString *)formattedSquaredString;
+- (nonnull NSDecimalNumber *)squared;
+- (nonnull NSString *)formattedSquaredString;
 
 @end
