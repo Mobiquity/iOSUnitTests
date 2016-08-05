@@ -322,13 +322,16 @@
                                                     <segue destination="mEY-vw-zOz" kind="presentation" modalTransitionStyle="flipHorizontal" id="3UL-CI-aIM"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfL-SX-AbO" userLabel="&lt;Your Test&gt;">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfL-SX-AbO" userLabel="Squared">
                                                 <rect key="frame" x="450" y="0.0" width="150" height="48"/>
                                                 <color key="backgroundColor" red="0.98431372549999996" green="0.72156862749999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                                 <state key="normal" title="&lt;Your Test&gt;">
                                                     <color key="titleColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="exponentialButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcE-MA-74J"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

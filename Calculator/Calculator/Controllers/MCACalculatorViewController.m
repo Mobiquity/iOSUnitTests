@@ -143,7 +143,11 @@
 
 #pragma mark - New Testable Action
 
-// TODO: Add IBAction for your testable action
-// TODO: Add testable classes and methods
+-(IBAction)exponentialButtonTapped:(id)sender {
+    
+    // TODO: Create MCASquarer from operand string
+    // TODO: Create and display alert with squared result and funny text
+
+}
 
 @end

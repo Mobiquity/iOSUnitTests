@@ -35,6 +35,8 @@
 		B9EE7E641C97F0F600EDBF8F /* NSString+MCAOperandStringUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EE7E631C97F0F600EDBF8F /* NSString+MCAOperandStringUtilsTests.m */; };
 		B9EE7E661C980EF100EDBF8F /* MCAOperatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EE7E651C980EF100EDBF8F /* MCAOperatorTests.m */; };
 		B9EE7E681C98175000EDBF8F /* MCACalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EE7E671C98175000EDBF8F /* MCACalculatorTests.m */; };
+		BA123C251D543F9600BCE860 /* MCASquarer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA123C241D543F9600BCE860 /* MCASquarer.m */; };
+		BA123C271D54402C00BCE860 /* MCASquarerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA123C261D54402C00BCE860 /* MCASquarerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,9 @@
 		B9EE7E631C97F0F600EDBF8F /* NSString+MCAOperandStringUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MCAOperandStringUtilsTests.m"; path = "untitled folder 2/NSString+MCAOperandStringUtilsTests.m"; sourceTree = "<group>"; };
 		B9EE7E651C980EF100EDBF8F /* MCAOperatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCAOperatorTests.m; path = "untitled folder/MCAOperatorTests.m"; sourceTree = "<group>"; };
 		B9EE7E671C98175000EDBF8F /* MCACalculatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCACalculatorTests.m; path = "untitled folder/MCACalculatorTests.m"; sourceTree = "<group>"; };
+		BA123C231D543F9600BCE860 /* MCASquarer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCASquarer.h; sourceTree = "<group>"; };
+		BA123C241D543F9600BCE860 /* MCASquarer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCASquarer.m; sourceTree = "<group>"; };
+		BA123C261D54402C00BCE860 /* MCASquarerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCASquarerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,7 +227,6 @@
 			children = (
 				081D777B1C96EE2F00B82FBA /* Resources */,
 				B96F489C1C8D3B60003A2A2F /* Controllers */,
-				B971107A1C84827600069433 /* Info.plist */,
 				B97110831C84875400069433 /* MCABaseTestCase.h */,
 				B97110841C84875400069433 /* MCABaseTestCase.m */,
 				08FEDCF81C8940EB00AD60AC /* MCAWolframAlphaQueryTests.m */,
@@ -250,6 +254,8 @@
 				B99126011C968559000163F0 /* MCACalculator.m */,
 				B99126041C96858A000163F0 /* MCAOperator.h */,
 				B99126051C96858A000163F0 /* MCAOperator.m */,
+				BA123C231D543F9600BCE860 /* MCASquarer.h */,
+				BA123C241D543F9600BCE860 /* MCASquarer.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 			children = (
 				B9EE7E651C980EF100EDBF8F /* MCAOperatorTests.m */,
 				B9EE7E671C98175000EDBF8F /* MCACalculatorTests.m */,
+				BA123C261D54402C00BCE860 /* MCASquarerTests.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -275,10 +282,7 @@
 		B9EE7E621C97F0BF00EDBF8F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B96F489C1C8D3B60003A2A2F /* Controllers */,
 				B9A879AF1C97895E00C10762 /* Models */,
-				B97110831C84875400069433 /* MCABaseTestCase.h */,
-				B97110841C84875400069433 /* MCABaseTestCase.m */,
 				B9EE7E631C97F0F600EDBF8F /* NSString+MCAOperandStringUtilsTests.m */,
 			);
 			name = Tests;
@@ -437,6 +441,7 @@
 				B97110601C84827600069433 /* main.m in Sources */,
 				08F14B861C96532100366343 /* MCAWolframAlphaSectionData.m in Sources */,
 				08B529541C97CAE100B8F6E1 /* MCACalculatorViewController.m in Sources */,
+				BA123C251D543F9600BCE860 /* MCASquarer.m in Sources */,
 				08F14B831C96503700366343 /* MCAWolframAlphaTableViewCell.m in Sources */,
 				08F14B801C96495500366343 /* MCAWolframAlphaDataSource.m in Sources */,
 				0877E77C1C9271F90028992E /* MCAWolframAlphaOutputParser.m in Sources */,
@@ -459,6 +464,7 @@
 				08F14B881C965B8500366343 /* MCAWolframAlphaOutputParserTests.m in Sources */,
 				08FEDCF91C8940EB00AD60AC /* MCAWolframAlphaQueryTests.m in Sources */,
 				B97110881C848B6D00069433 /* MCAHTTPStubUtils.m in Sources */,
+				BA123C271D54402C00BCE860 /* MCASquarerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
