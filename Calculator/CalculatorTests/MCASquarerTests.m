@@ -7,6 +7,7 @@
 //
 
 #import "MCABaseTestCase.h"
+#import "MCASquarer.h"
 
 @interface MCASquarerTests : MCABaseTestCase
 
@@ -22,6 +23,11 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+- (void)testInitialization {
+    MCASquarer *squarer = [[MCASquarer alloc] initWithString:@""];
+    XCTAssertNotNil(squarer, @"MCASquarer should be initialized, not nil.");
 }
 
 @end
