@@ -12,11 +12,13 @@
 #import "MCAOperator.h"
 
 #import "NSString+MCAOperandStringUtils.h"
+#import "MCAColorChanger.h"
 
 @interface MCACalculatorViewController ()
 
 @property (nonatomic, weak) IBOutlet UILabel *calculatorDisplayLabel;
 @property (nonatomic, weak) IBOutlet UIButton *clearButton;
+@property (nonatomic, weak) IBOutlet UIButton *changeColorButton;
 
 @property (nonatomic, copy) NSString *operandString;
 
@@ -32,6 +34,9 @@
     [super viewDidLoad];
     self.calculator = [[MCACalculator alloc] init];
     self.operators = [self createOperators];
+    
+    MCAColorChanger *changer = [[MCAColorChanger alloc] init];    
+    [self updateColor:changer.currentColor];
 }
 
 - (NSMutableArray *)createOperators {
@@ -144,10 +149,15 @@
 #pragma mark - New Testable Action
 
 -(IBAction)changeColorTapped:(id)sender {
+    MCAColorChanger *changer = [[MCAColorChanger alloc] init];
+    [changer toggle];
     
+    [self updateColor:changer.currentColor];
 }
 
-// TODO: Add IBAction for your testable action
-// TODO: Add testable classes and methods
+- (void)updateColor:(UIColor *)color {
+    self.changeColorButton.layer.borderColor = color.CGColor;
+    self.changeColorButton.layer.borderWidth = 1;
+}
 
 @end

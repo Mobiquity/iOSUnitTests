@@ -39,6 +39,14 @@ static NSString *const colorKey = @"MCAColor";
     }
 }
 
+- (UIColor *)onColor {
+    return UIColor.redColor;
+}
+
+- (UIColor *)offColor {
+    return UIColor.cyanColor;
+}
+
 - (void)setChangeColors:(BOOL)changeColors {
     _changeColors = changeColors;
     [[NSUserDefaults standardUserDefaults] setBool:changeColors forKey:colorKey];
