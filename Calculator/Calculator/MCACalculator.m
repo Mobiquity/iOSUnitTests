@@ -97,12 +97,9 @@
 }
 -(NSString *)getSquareRoot: (NSString *)calculatorDisplayLabel
 {
-    self.expressionComplete = NO;
     if ([calculatorDisplayLabel floatValue] >= 0)
     {
        calculatorDisplayLabel = [NSString stringWithFormat:@"%f", sqrt([calculatorDisplayLabel floatValue])];
-       
-        
     }
     else {
         calculatorDisplayLabel = @"ERROR";
@@ -113,18 +110,12 @@
 
 - (void)clearAllCalculatorHistory
 {
-    self.expressionComplete = NO;
+    self.expressionComplete = YES;
     [self.operators removeAllObjects];
     [self.operands removeAllObjects];
 }
 
--(void)squareRootError
-{
-    self.expressionComplete = YES;
-    [self.operators removeAllObjects];
-    [self.operands removeAllObjects];
-    
-}
+
 
 
 @end

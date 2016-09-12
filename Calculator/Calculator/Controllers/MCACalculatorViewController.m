@@ -90,7 +90,6 @@
         self.operandString = self.calculatorDisplayLabel.text;
     }
     else {
-        [self.calculator squareRootError];
         [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
 
         [NSTimer scheduledTimerWithTimeInterval:1.0
