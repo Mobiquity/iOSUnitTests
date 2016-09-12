@@ -82,6 +82,20 @@
     self.calculatorDisplayLabel.text = MCAZeroString;
 }
 
+- (IBAction)squarerootButtonTapped:(id)sender
+{
+    if ([self.operandString integerValue] > 0)
+    {
+        self.operandString = [NSString stringWithFormat:@"%f", sqrt([self.operandString integerValue])] ;
+        self.calculatorDisplayLabel.text = self.operandString;
+    }
+    else {
+        self.operandString = @"ERROR";
+        self.calculatorDisplayLabel.text = self.operandString;
+    }
+}
+
+
 - (IBAction)numericInputButtonTapped:(UIButton *)sender
 {
     NSString *operandString = [(self.operandString ?: [NSString string]) mca_stringByAppendingNumericInputType:sender.tag];
