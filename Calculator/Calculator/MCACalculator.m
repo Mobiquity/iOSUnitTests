@@ -43,7 +43,7 @@
     
     if (previousOperator && previousOperator.precedence >= operator.precedence) {
         // expression can be simplified
-        retObj = [self evaluateExpressionFromHistory];
+        retObj = [self simplifyOperators:[self.operators mutableCopy] forOperands:[self.operands mutableCopy]];
         // keep the result and the most recent operation
         self.operands = [NSMutableArray arrayWithObjects:retObj, nil];
         self.operators = [NSMutableArray arrayWithObjects:[self.operators lastObject], nil];
