@@ -25,7 +25,7 @@
 - (IBAction)clearButtonTapped:(id)sender;
 - (IBAction)operatorButtonTapped:(UIButton *)sender;
 - (NSMutableArray *)createOperators;
-
+- (IBAction)squarerootButtonTapped:(id)sender;
 @end
 
 @interface CalculatorTests : MCABaseTestCase
@@ -193,6 +193,19 @@
     
     //Assert
     [self.calculatorViewController operatorButtonTapped:unknownOperatorButton];
+}
+-(void)testMCACalculatorViewController_squarerootButtonTapped_shouldShowERRROR
+{
+    // Arrange
+    id mockLabel = [OCMockObject niceMockForClass:[UILabel class]];
+    [[mockLabel expect] setText:@"ERROR"];
+    self.calculatorViewController.calculatorDisplayLabel = mockLabel;
+    
+    // Act - Since the calculator starts with 0 squarerootButtonTapped will be ERROR
+    [self.calculatorViewController squarerootButtonTapped:nil];
+    
+    //Assert
+    [mockLabel verify];
 }
 
 
