@@ -148,4 +148,43 @@
     //Assert
     XCTAssertFalse(expressionComplete, @"Expected push operand with operator to not set expression complete.");
 }
+
+-(void) testMCACalculator_squareRootPositiveIntNumber_shouldSetValueToSquareRoot{
+    // Arrange
+    NSString *expected = @"2.000000";
+    
+    // Act
+    NSString *actual = [self.calculator getSquareRoot:@"4"];
+    
+    
+    //Assert
+    XCTAssertTrue([actual isEqualToString:expected],
+                  @"Strings are not equal %@ %@", expected,  actual);
+}
+-(void) testMCACalculator_squareRootPositiveRealNumber_shouldSetValueToSquareRoot{
+    // Arrange
+    NSString *expected = @"8.800000";
+    
+    // Act
+    NSString *actual = [self.calculator getSquareRoot:@"77.44"];
+    
+    //Assert
+    XCTAssertTrue([actual isEqualToString:expected],
+                  @"Strings are not equal %@ %@", expected,  actual);
+}
+-(void) testMCACalculator_squareRootZeroNumber_shouldSetValueToSquareRoot{
+    // Arrange
+    NSString *expected = @"0.000000";
+    
+    // Act
+    NSString *actual = [self.calculator getSquareRoot:@"0"];
+    
+    
+    //Assert
+    XCTAssertTrue([actual isEqualToString:expected],
+                  @"Strings are not equal %@ %@", expected,  actual);
+}
+
+
+
 @end

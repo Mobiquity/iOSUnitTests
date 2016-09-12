@@ -95,12 +95,35 @@
     return [self simplifyOperators:operators forOperands:operands];
     
 }
+-(NSString *)getSquareRoot: (NSString *)calculatorDisplayLabel
+{
+    self.expressionComplete = NO;
+    if ([calculatorDisplayLabel floatValue] >= 0)
+    {
+       calculatorDisplayLabel = [NSString stringWithFormat:@"%f", sqrt([calculatorDisplayLabel floatValue])];
+       
+        
+    }
+    else {
+        calculatorDisplayLabel = @"ERROR";
+    }
+    return calculatorDisplayLabel;
+
+}
 
 - (void)clearAllCalculatorHistory
 {
     self.expressionComplete = NO;
     [self.operators removeAllObjects];
     [self.operands removeAllObjects];
+}
+
+-(void)squareRootError
+{
+    self.expressionComplete = YES;
+    [self.operators removeAllObjects];
+    [self.operands removeAllObjects];
+    
 }
 
 
