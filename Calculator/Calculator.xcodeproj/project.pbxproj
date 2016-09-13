@@ -94,11 +94,11 @@
 		B99126011C968559000163F0 /* MCACalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCACalculator.m; sourceTree = "<group>"; };
 		B99126041C96858A000163F0 /* MCAOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAOperator.h; sourceTree = "<group>"; };
 		B99126051C96858A000163F0 /* MCAOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAOperator.m; sourceTree = "<group>"; };
-		B9A879B31C97A96F00C10762 /* NSString+MCAOperandStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MCAOperandStringUtils.h"; path = "untitled folder 2/NSString+MCAOperandStringUtils.h"; sourceTree = "<group>"; };
-		B9A879B41C97A96F00C10762 /* NSString+MCAOperandStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MCAOperandStringUtils.m"; path = "untitled folder 2/NSString+MCAOperandStringUtils.m"; sourceTree = "<group>"; };
-		B9EE7E631C97F0F600EDBF8F /* NSString+MCAOperandStringUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MCAOperandStringUtilsTests.m"; path = "untitled folder 2/NSString+MCAOperandStringUtilsTests.m"; sourceTree = "<group>"; };
-		B9EE7E651C980EF100EDBF8F /* MCAOperatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCAOperatorTests.m; path = "untitled folder/MCAOperatorTests.m"; sourceTree = "<group>"; };
-		B9EE7E671C98175000EDBF8F /* MCACalculatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCACalculatorTests.m; path = "untitled folder/MCACalculatorTests.m"; sourceTree = "<group>"; };
+		B9A879B31C97A96F00C10762 /* NSString+MCAOperandStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MCAOperandStringUtils.h"; sourceTree = "<group>"; };
+		B9A879B41C97A96F00C10762 /* NSString+MCAOperandStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MCAOperandStringUtils.m"; sourceTree = "<group>"; };
+		B9EE7E631C97F0F600EDBF8F /* NSString+MCAOperandStringUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MCAOperandStringUtilsTests.m"; sourceTree = "<group>"; };
+		B9EE7E651C980EF100EDBF8F /* MCAOperatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAOperatorTests.m; sourceTree = "<group>"; };
+		B9EE7E671C98175000EDBF8F /* MCACalculatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCACalculatorTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,14 +134,16 @@
 		0877E7791C92719B0028992E /* Wolfram Alpha */ = {
 			isa = PBXGroup;
 			children = (
-				08FEDCF51C893F1500AD60AC /* MCAWolframAlphaQuery.h */,
-				08FEDCF61C893F1500AD60AC /* MCAWolframAlphaQuery.m */,
-				0877E77A1C9271F90028992E /* MCAWolframAlphaOutputParser.h */,
-				0877E77B1C9271F90028992E /* MCAWolframAlphaOutputParser.m */,
 				08F14B7E1C96495500366343 /* MCAWolframAlphaDataSource.h */,
 				08F14B7F1C96495500366343 /* MCAWolframAlphaDataSource.m */,
+				0877E77A1C9271F90028992E /* MCAWolframAlphaOutputParser.h */,
+				0877E77B1C9271F90028992E /* MCAWolframAlphaOutputParser.m */,
+				08FEDCF51C893F1500AD60AC /* MCAWolframAlphaQuery.h */,
+				08FEDCF61C893F1500AD60AC /* MCAWolframAlphaQuery.m */,
 				08F14B841C96532100366343 /* MCAWolframAlphaSectionData.h */,
 				08F14B851C96532100366343 /* MCAWolframAlphaSectionData.m */,
+				08F14B811C96503700366343 /* MCAWolframAlphaTableViewCell.h */,
+				08F14B821C96503700366343 /* MCAWolframAlphaTableViewCell.m */,
 			);
 			path = "Wolfram Alpha";
 			sourceTree = "<group>";
@@ -166,13 +168,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		B96F489C1C8D3B60003A2A2F /* Controllers */ = {
+		B96F489C1C8D3B60003A2A2F /* ControllersTests */ = {
 			isa = PBXGroup;
 			children = (
 				B97110781C84827600069433 /* MCACalculatorViewControllerTests.m */,
 				B96F489A1C8D394F003A2A2F /* MCAWolframAlphaViewControllerTests.m */,
 			);
-			path = Controllers;
+			path = ControllersTests;
 			sourceTree = "<group>";
 		};
 		B97110521C84827600069433 = {
@@ -180,9 +182,9 @@
 			children = (
 				B971105D1C84827600069433 /* Calculator */,
 				B97110771C84827600069433 /* CalculatorTests */,
-				B971105C1C84827600069433 /* Products */,
-				EEE4B67F07A784617C5076D8 /* Pods */,
 				A121A5984338C2CB0709CF40 /* Frameworks */,
+				EEE4B67F07A784617C5076D8 /* Pods */,
+				B971105C1C84827600069433 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,19 +200,13 @@
 		B971105D1C84827600069433 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				0877E7791C92719B0028992E /* Wolfram Alpha */,
-				B97110611C84827600069433 /* MCAAppDelegate.h */,
-				B97110621C84827600069433 /* MCAAppDelegate.m */,
-				08F14B811C96503700366343 /* MCAWolframAlphaTableViewCell.h */,
-				08F14B821C96503700366343 /* MCAWolframAlphaTableViewCell.m */,
 				B96F48961C8D37E6003A2A2F /* Controllers */,
 				B99126031C96856E000163F0 /* Models */,
-				B9A879B61C97A97500C10762 /* Utilities */,
-				B97110671C84827600069433 /* Main.storyboard */,
-				B971106A1C84827600069433 /* Assets.xcassets */,
-				B971106C1C84827600069433 /* LaunchScreen.storyboard */,
-				B971106F1C84827600069433 /* Info.plist */,
 				B971105E1C84827600069433 /* Supporting Files */,
+				B9A879B61C97A97500C10762 /* Utilities */,
+				0877E7791C92719B0028992E /* Wolfram Alpha */,
+				B971106A1C84827600069433 /* Assets.xcassets */,
+				B97110671C84827600069433 /* Main.storyboard */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -218,34 +214,38 @@
 		B971105E1C84827600069433 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B971106F1C84827600069433 /* Info.plist */,
+				B971106C1C84827600069433 /* LaunchScreen.storyboard */,
+				B97110611C84827600069433 /* MCAAppDelegate.h */,
+				B97110621C84827600069433 /* MCAAppDelegate.m */,
 				B971105F1C84827600069433 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B97110771C84827600069433 /* CalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				B96F489C1C8D3B60003A2A2F /* ControllersTests */,
+				B9A879AF1C97895E00C10762 /* ModelsTests */,
 				081D777B1C96EE2F00B82FBA /* Resources */,
-				B96F489C1C8D3B60003A2A2F /* Controllers */,
-				B97110831C84875400069433 /* MCABaseTestCase.h */,
-				B97110841C84875400069433 /* MCABaseTestCase.m */,
-				08FEDCF81C8940EB00AD60AC /* MCAWolframAlphaQueryTests.m */,
-				08F14B871C965B8500366343 /* MCAWolframAlphaOutputParserTests.m */,
-				B9EE7E621C97F0BF00EDBF8F /* Tests */,
-				B971107A1C84827600069433 /* Info.plist */,
-				B97110891C848B7B00069433 /* Utilities */,
+				B97110891C848B7B00069433 /* Supporting Files */,
+				B9EE7E621C97F0BF00EDBF8F /* UtilitiesTests */,
+				C04A82A61D888B8900CB4D3B /* WolframAlphaTests */,
 			);
 			path = CalculatorTests;
 			sourceTree = "<group>";
 		};
-		B97110891C848B7B00069433 /* Utilities */ = {
+		B97110891C848B7B00069433 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B971107A1C84827600069433 /* Info.plist */,
+				B97110831C84875400069433 /* MCABaseTestCase.h */,
+				B97110841C84875400069433 /* MCABaseTestCase.m */,
 				B97110861C848B6D00069433 /* MCAHTTPStubUtils.h */,
 				B97110871C848B6D00069433 /* MCAHTTPStubUtils.m */,
 			);
-			path = Utilities;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B99126031C96856E000163F0 /* Models */ = {
@@ -256,16 +256,16 @@
 				B99126041C96858A000163F0 /* MCAOperator.h */,
 				B99126051C96858A000163F0 /* MCAOperator.m */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		B9A879AF1C97895E00C10762 /* Models */ = {
+		B9A879AF1C97895E00C10762 /* ModelsTests */ = {
 			isa = PBXGroup;
 			children = (
-				B9EE7E651C980EF100EDBF8F /* MCAOperatorTests.m */,
 				B9EE7E671C98175000EDBF8F /* MCACalculatorTests.m */,
+				B9EE7E651C980EF100EDBF8F /* MCAOperatorTests.m */,
 			);
-			name = Models;
+			path = ModelsTests;
 			sourceTree = "<group>";
 		};
 		B9A879B61C97A97500C10762 /* Utilities */ = {
@@ -274,16 +274,24 @@
 				B9A879B31C97A96F00C10762 /* NSString+MCAOperandStringUtils.h */,
 				B9A879B41C97A96F00C10762 /* NSString+MCAOperandStringUtils.m */,
 			);
-			name = Utilities;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
-		B9EE7E621C97F0BF00EDBF8F /* Tests */ = {
+		B9EE7E621C97F0BF00EDBF8F /* UtilitiesTests */ = {
 			isa = PBXGroup;
 			children = (
-				B9A879AF1C97895E00C10762 /* Models */,
 				B9EE7E631C97F0F600EDBF8F /* NSString+MCAOperandStringUtilsTests.m */,
 			);
-			name = Tests;
+			path = UtilitiesTests;
+			sourceTree = "<group>";
+		};
+		C04A82A61D888B8900CB4D3B /* WolframAlphaTests */ = {
+			isa = PBXGroup;
+			children = (
+				08F14B871C965B8500366343 /* MCAWolframAlphaOutputParserTests.m */,
+				08FEDCF81C8940EB00AD60AC /* MCAWolframAlphaQueryTests.m */,
+			);
+			path = WolframAlphaTests;
 			sourceTree = "<group>";
 		};
 		EEE4B67F07A784617C5076D8 /* Pods */ = {
@@ -547,6 +555,7 @@
 				B97110681C84827600069433 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		B971106C1C84827600069433 /* LaunchScreen.storyboard */ = {
@@ -555,6 +564,7 @@
 				B971106D1C84827600069433 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -645,7 +655,7 @@
 			baseConfigurationReference = 0C62EDBA966531DF458CC859 /* Pods-Calculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Calculator/Info.plist;
+				INFOPLIST_FILE = "Calculator/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquityinc.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -657,7 +667,7 @@
 			baseConfigurationReference = 6DF73D0C8D0FA8718A577E59 /* Pods-Calculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Calculator/Info.plist;
+				INFOPLIST_FILE = "Calculator/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquityinc.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
