@@ -25,7 +25,6 @@
 - (IBAction)clearButtonTapped:(id)sender;
 - (IBAction)operatorButtonTapped:(UIButton *)sender;
 - (NSMutableArray *)createOperators;
-- (IBAction)squarerootButtonTapped:(id)sender;
 @end
 
 @interface CalculatorTests : MCABaseTestCase
