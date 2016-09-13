@@ -126,4 +126,26 @@
     XCTAssertTrue(expressionComplete, @"Expected evaluating expression to set expression complete to YES.");
 }
 
+- (void)testMCACalculator_pushOperatorWithOperand_shouldNotSetExpressionComplete
+{
+    // Arrange
+    self.calculator.expressionComplete = NO;
+    
+    MCAOperator *highPrecedenceOperator = [[MCAOperator alloc] initWithPrecedence:10 operationBlock:^NSDecimalNumber * _Nonnull(NSDecimalNumber * _Nonnull operand1, NSDecimalNumber * _Nonnull operand2) {
+        return [NSDecimalNumber zero];
+    }];
+    
+    MCAOperator *lowPrecendenceOperator = [[MCAOperator alloc] initWithPrecedence:5 operationBlock:^NSDecimalNumber * _Nonnull(NSDecimalNumber * _Nonnull operand1, NSDecimalNumber * _Nonnull operand2) {
+        return [NSDecimalNumber zero];
+    }];
+    
+    self.calculator.operators = [NSMutableArray arrayWithObjects:highPrecedenceOperator, nil];
+    [self.calculator pushOperator:lowPrecendenceOperator withOperand:[NSDecimalNumber one]];
+    
+    // Act
+    BOOL expressionComplete = self.calculator.isExpressionComplete;
+    
+    //Assert
+    XCTAssertFalse(expressionComplete, @"Expected push operand with operator to not set expression complete.");
+}
 @end
