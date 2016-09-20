@@ -20,6 +20,5 @@
 - (NSDecimalNumber *)evaluateExpressionFromHistory;
 
 - (void)clearAllCalculatorHistory;
-- (NSString *)getSquareRoot: (NSString *)calculatorDisplayLabel;
--(void)squareRootError;
+- (NSString *)getSquareRoot: (NSString *)radicand;
 @end
