@@ -148,4 +148,19 @@
     //Assert
     XCTAssertFalse(expressionComplete, @"Expected push operand with operator to not set expression complete.");
 }
+
+
+- (void)testMCACalculator_convertOperandToBinary_decimalShouldConvertToBinary {
+    
+    // Arrange
+    NSDecimalNumber *decimalToConvert = [NSDecimalNumber decimalNumberWithString:@"144"];
+    NSString *expected = @"10010000";
+    
+    // Act
+    NSString *actual = [self.calculator convertOperandToBinary:decimalToConvert];
+    
+    // Assert
+    XCTAssertEqualObjects(expected, actual, @"Expected conversion of Base 10 '2' to equal Base 2 '100100000'.");
+}
+
 @end

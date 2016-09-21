@@ -195,5 +195,4 @@
     [self.calculatorViewController operatorButtonTapped:unknownOperatorButton];
 }
 
-
 @end
