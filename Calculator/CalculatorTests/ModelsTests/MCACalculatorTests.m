@@ -149,6 +149,7 @@
     XCTAssertFalse(expressionComplete, @"Expected push operand with operator to not set expression complete.");
 }
 
+<<<<<<< e5919e7c019bcaba508661f88d99392a45eddbde
 -(void) testMCACalculator_squareRootPositiveIntNumber_shouldSetValueToSquareRoot{
     // Arrange
     NSString *expected = @"2.000000";
@@ -187,4 +188,20 @@
 
 
 
+=======
+
+- (void)testMCACalculator_convertOperandToBinary_decimalShouldConvertToBinary {
+    
+    // Arrange
+    NSDecimalNumber *decimalToConvert = [NSDecimalNumber decimalNumberWithString:@"144"];
+    NSString *expected = @"10010000";
+    
+    // Act
+    NSString *actual = [self.calculator convertOperandToBinary:decimalToConvert];
+    
+    // Assert
+    XCTAssertEqualObjects(expected, actual, @"Expected conversion of Base 10 '2' to equal Base 2 '100100000'.");
+}
+
+>>>>>>> Added functions and test for binary conversion button
 @end

@@ -18,7 +18,7 @@
 - (void)pushOperator:(MCAOperator *)operator;
 
 - (NSDecimalNumber *)evaluateExpressionFromHistory;
-
+- (NSString *)convertOperandToBinary:(NSDecimalNumber *)operand;
 - (void)clearAllCalculatorHistory;
 - (NSString *)getSquareRoot: (NSString *)radicand;
 @end

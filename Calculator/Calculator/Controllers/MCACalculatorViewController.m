@@ -165,12 +165,22 @@
     self.calculatorDisplayLabel.text = [NSString mca_stringFromOperandNumber:result];
 }
 
-// TODO: add func to convert entered operator to binary
+- (IBAction)binButtonTapped:(id)sender {
+    NSDecimalNumber *calculationResult;
+    NSDecimalNumber *operand = [self.operandString mca_toOperandNumber] ?: [self.calculatorDisplayLabel.text mca_toOperandNumber];
+    
+    if (operand) {
+        calculationResult = [self.calculator pushOperand:operand];
+    } else {
+        calculationResult = [self.calculator evaluateExpressionFromHistory];
+    }
+    
+    self.operandString = nil;
+    NSString *binaryResultString = [self.calculator convertOperandToBinary:calculationResult];
 
-// TODO: only allow 0 as first digit if immediately followed by a decimal point
-
-// TODO: only one decimal point per operator
-
+    self.calculatorDisplayLabel.text = [NSString stringWithFormat:@"bin:  %@", binaryResultString ];
+    
+}
 
 -(IBAction)unwindToCalculatorViewController:(UIStoryboardSegue *)sender {}
 

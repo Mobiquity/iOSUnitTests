@@ -76,6 +76,17 @@
     return [self simplifyOperators:[self.operators mutableCopy] forOperands:[self.operands mutableCopy]];
 }
 
+- (NSString *)convertOperandToBinary:(NSDecimalNumber *)operand {
+    
+    NSString *binaryString = @"" ;
+    NSUInteger x = operand.integerValue ;
+    do {
+        binaryString = [[NSString stringWithFormat: @"%lu", x&1] stringByAppendingString:binaryString];
+    } while (x >>= 1);
+    return binaryString;
+
+}
+
 - (NSDecimalNumber *)simplifyOperators:(NSMutableArray <MCAOperator *> *)operators forOperands:(NSMutableArray <NSDecimalNumber *> *)operands
 {
     if (operands.count <= 2) {

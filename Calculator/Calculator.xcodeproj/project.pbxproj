@@ -35,6 +35,8 @@
 		B9EE7E641C97F0F600EDBF8F /* NSString+MCAOperandStringUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EE7E631C97F0F600EDBF8F /* NSString+MCAOperandStringUtilsTests.m */; };
 		B9EE7E661C980EF100EDBF8F /* MCAOperatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EE7E651C980EF100EDBF8F /* MCAOperatorTests.m */; };
 		B9EE7E681C98175000EDBF8F /* MCACalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EE7E671C98175000EDBF8F /* MCACalculatorTests.m */; };
+		C0FDA9D61D88996C007EDB2F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0FDA9D51D88996C007EDB2F /* Info.plist */; };
+		EA0E7054E4FE685773919A7D /* libPods-Calculator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0B9EF537AB783E9E72483A /* libPods-Calculator.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +83,6 @@
 		B971106F1C84827600069433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B97110741C84827600069433 /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97110781C84827600069433 /* MCACalculatorViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCACalculatorViewControllerTests.m; sourceTree = "<group>"; };
-		B971107A1C84827600069433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B97110831C84875400069433 /* MCABaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCABaseTestCase.h; sourceTree = "<group>"; };
 		B97110841C84875400069433 /* MCABaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCABaseTestCase.m; sourceTree = "<group>"; };
 		B97110861C848B6D00069433 /* MCAHTTPStubUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAHTTPStubUtils.h; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 		B9EE7E631C97F0F600EDBF8F /* NSString+MCAOperandStringUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MCAOperandStringUtilsTests.m"; sourceTree = "<group>"; };
 		B9EE7E651C980EF100EDBF8F /* MCAOperatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAOperatorTests.m; sourceTree = "<group>"; };
 		B9EE7E671C98175000EDBF8F /* MCACalculatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCACalculatorTests.m; sourceTree = "<group>"; };
+		C0FDA9D51D88996C007EDB2F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 		B97110771C84827600069433 /* CalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				C0FDA9D51D88996C007EDB2F /* Info.plist */,
 				B96F489C1C8D3B60003A2A2F /* ControllersTests */,
 				B9A879AF1C97895E00C10762 /* ModelsTests */,
 				081D777B1C96EE2F00B82FBA /* Resources */,
@@ -235,7 +238,6 @@
 		B97110891C848B7B00069433 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B971107A1C84827600069433 /* Info.plist */,
 				B97110831C84875400069433 /* MCABaseTestCase.h */,
 				B97110841C84875400069433 /* MCABaseTestCase.m */,
 				B97110861C848B6D00069433 /* MCAHTTPStubUtils.h */,
@@ -391,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0FDA9D61D88996C007EDB2F /* Info.plist in Resources */,
 				081D77811C96EE2F00B82FBA /* pi.xml in Resources */,
 				081D777F1C96EE2F00B82FBA /* arithmetic.xml in Resources */,
 				081D77801C96EE2F00B82FBA /* euler.xml in Resources */,
