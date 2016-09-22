@@ -95,6 +95,18 @@
     return [self simplifyOperators:operators forOperands:operands];
     
 }
+-(NSString *)getSquareRoot: (NSString *)radicand
+{
+    if ([radicand floatValue] >= 0)
+    {
+       radicand = [NSString stringWithFormat:@"%f", sqrt([radicand floatValue])];
+    }
+    else {
+        radicand = @"ERROR";
+    }
+    return radicand;
+
+}
 
 - (void)clearAllCalculatorHistory
 {
@@ -102,6 +114,8 @@
     [self.operators removeAllObjects];
     [self.operands removeAllObjects];
 }
+
+
 
 
 @end
