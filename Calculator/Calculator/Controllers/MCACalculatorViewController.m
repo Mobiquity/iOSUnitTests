@@ -165,6 +165,11 @@
     self.calculatorDisplayLabel.text = [NSString mca_stringFromOperandNumber:result];
 }
 
+- (IBAction)piButtonTapped:(id)sender
+{
+    self.calculatorDisplayLabel.text = [self.calculator getPiValue];
+}
+
 -(IBAction)unwindToCalculatorViewController:(UIStoryboardSegue *)sender {}
 
 @end

@@ -21,4 +21,6 @@
 
 - (void)clearAllCalculatorHistory;
 - (NSString *)getSquareRoot: (NSString *)radicand;
+- (NSString *)getPiValue;
+
 @end
