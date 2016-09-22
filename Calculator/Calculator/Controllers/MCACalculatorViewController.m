@@ -82,6 +82,32 @@
     self.calculatorDisplayLabel.text = MCAZeroString;
 }
 
+- (IBAction)squarerootButtonTapped:(id)sender
+{
+    self.calculatorDisplayLabel.text= [self.calculator getSquareRoot: self.calculatorDisplayLabel.text];
+    if (![self.calculatorDisplayLabel.text  isEqual: @"ERROR"])
+    {
+        self.operandString = self.calculatorDisplayLabel.text;
+    }
+    else {
+        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+
+        [NSTimer scheduledTimerWithTimeInterval:1.0
+                                         target:self
+                                       selector:@selector(setDisplayToZero)
+                                       userInfo:nil
+                                        repeats:NO];
+    }
+}
+
+-(void) setDisplayToZero
+{
+    self.calculatorDisplayLabel.text = @"0";
+    self.operandString = @"0";
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+
+    
+}
 - (IBAction)numericInputButtonTapped:(UIButton *)sender
 {
     NSString *operandString = [(self.operandString ?: [NSString string]) mca_stringByAppendingNumericInputType:sender.tag];
