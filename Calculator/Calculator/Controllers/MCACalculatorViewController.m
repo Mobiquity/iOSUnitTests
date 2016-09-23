@@ -165,6 +165,13 @@
     self.calculatorDisplayLabel.text = [NSString mca_stringFromOperandNumber:result];
 }
 
+// TODO: add func to convert entered operator to binary
+
+// TODO: only allow 0 as first digit if immediately followed by a decimal point
+
+// TODO: only one decimal point per operator
+
+
 -(IBAction)unwindToCalculatorViewController:(UIStoryboardSegue *)sender {}
 
 @end
