@@ -108,6 +108,32 @@
 
 }
 
+- (NSString *)convertOperandToBinary:(NSDecimalNumber *)operand {
+    
+    NSMutableString * binaryString = [[NSMutableString alloc] init];
+    
+    int spacing = pow(2, 3);
+    int widthOfBinary = (sizeof(operand)) * spacing;
+    int binaryStringPosition = 0;
+    NSInteger intOfOperand = operand.integerValue;
+    
+    while(binaryStringPosition < widthOfBinary) {
+        binaryStringPosition++;
+        
+        // build the binary string from int
+        [binaryString insertString:((intOfOperand & 1) ? @"1" : @"0")atIndex:0];
+        
+        // put in a blank space every 8 digits for reading clarity
+        if(binaryStringPosition % spacing == 0 && binaryStringPosition != widthOfBinary) {
+            [binaryString insertString:@" " atIndex:0];
+        }
+        // shift over one bit
+        intOfOperand = intOfOperand >> 1;
+    }
+    
+    return binaryString;
+}
+
 - (void)clearAllCalculatorHistory
 {
     self.expressionComplete = NO;
