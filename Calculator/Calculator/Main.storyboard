@@ -23,12 +23,10 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="xQK-pD-ml5">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMb-Dn-vbV">
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="GMb-Dn-vbV">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BDf-dj-ie2">
-                                                <rect key="frame" x="16" y="0.0" width="568" height="75"/>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="0" textAlignment="right" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="BDf-dj-ie2">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" misplaced="YES" text="0" textAlignment="right" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="BDf-dj-ie2">
                                                 <rect key="frame" x="16" y="0.0" width="568" height="91"/>
                                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="76"/>
                                                 <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -151,7 +149,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyX-g5-mzz" userLabel="Multiply">
-                                                <rect key="frame" x="451" y="0.0" width="148.5" height="72.5"/>
+                                                <rect key="frame" x="452" y="0.0" width="149" height="75"/>
                                                 <color key="backgroundColor" red="0.98431372549999996" green="0.72156862749999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title="×">
