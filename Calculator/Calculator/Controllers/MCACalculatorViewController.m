@@ -165,6 +165,23 @@
     self.calculatorDisplayLabel.text = [NSString mca_stringFromOperandNumber:result];
 }
 
+- (IBAction)binButtonTapped:(id)sender {
+    NSDecimalNumber *calculationResult;
+    NSDecimalNumber *operand = [self.operandString mca_toOperandNumber] ?: [self.calculatorDisplayLabel.text mca_toOperandNumber];
+    
+    if (operand) {
+        calculationResult = [self.calculator pushOperand:operand];
+    } else {
+        calculationResult = [self.calculator evaluateExpressionFromHistory];
+    }
+    
+    self.operandString = nil;
+    NSString *binaryResultString = [self.calculator convertOperandToBinary:calculationResult];
+    
+    self.calculatorDisplayLabel.text = [NSString stringWithFormat:@"%@", binaryResultString ];
+    
+}
+
 -(IBAction)unwindToCalculatorViewController:(UIStoryboardSegue *)sender {}
 
 @end
