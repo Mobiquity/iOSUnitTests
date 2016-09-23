@@ -28,7 +28,9 @@ NSString * const wolframAlphaQueryString = @"http://api.wolframalpha.com/v2/quer
     }
     
     if (self = [super init]) {
-        _query = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        NSMutableCharacterSet *URLQueryPartAllowedCharacterSet = [[NSCharacterSet URLQueryAllowedCharacterSet] mutableCopy];
+        [URLQueryPartAllowedCharacterSet removeCharactersInString:@"#$&+,/:;=?@[]"]; // escape all characters WolframAlpha API does not accept in query
+        _query = [query stringByAddingPercentEncodingWithAllowedCharacters:URLQueryPartAllowedCharacterSet];
     }
     return self;
 }
