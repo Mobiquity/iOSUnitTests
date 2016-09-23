@@ -185,6 +185,49 @@
                   @"Strings are not equal %@ %@", expected,  actual);
 }
 
+- (void)testMCACalculator_convertOperandToBinary_decimalShouldConvertToBinary {
+    
+    // Arrange
+    NSDecimalNumber *decimalToConvert = [NSDecimalNumber decimalNumberWithString:@"13"];
+    NSString *expected = @"00000000 000000000 00000000 00000000 000000000 00000000 00000000 00001101";
+    
+    // Act
+    NSString *actual = [self.calculator convertOperandToBinary:decimalToConvert];
+    
+    // Assert
+    XCTAssertEqualObjects(expected, actual, @"Expected conversion of Base 10 '13' to equal Base 2 '00000000 000000000 00000000 00000000 000000000 00000000 00000000 00001101'.");
+}
 
+// TODO: Add additional test for binary function
+/* 
+ Nil data
+ "Bad" data --- Does your binary conversion support negative numbers? If so, add one in the "Good" section, if not, add one in the "bad" section. i.e. in the first case, @"-1" should yield a valid string, but in the second case, the function should either throw or return nil (both of which can be addressed in the // Assert section of your tests)
+ "Garbage" data -- I know the calculator as it stands does not accept string input, but I'd like to see tests against it anyway: try to convert "Chris Is The Greatest" to a binary number ;) */
+
+- (void)testMCACalculator_convertOperandToBinary_negativeDecimalShouldConvertToBinary {
+    
+    // Arrange
+    NSDecimalNumber *negativeDecimalToConvert = [NSDecimalNumber decimalNumberWithString:@"-13"];
+    NSString *expected = @"11111111 11111111 11111111 11111111 11111111 11111111 11111111 11110011";
+    
+    // Act
+    NSString *actual = [self.calculator convertOperandToBinary:negativeDecimalToConvert];
+    
+    // Assert
+    XCTAssertEqualObjects(expected, actual, @"Expected conversion of Base 10 '-13' to equal Base 2 '11111111 11111111 11111111 11111111 11111111 11111111 11111111 11110011'.");
+}
+
+- (void)testMCACalculator_convertOperandToBinary_stringShouldNotConvertToBinary {
+    
+    // Arrange
+    NSDecimalNumber *stringAsDecimal = [NSDecimalNumber decimalNumberWithString:@"Chris Is The Greatest"];
+    NSString *expected = @"NaN";
+    
+    // Act
+    NSString *actual = [self.calculator convertOperandToBinary:stringAsDecimal];
+    
+    // Assert
+    XCTAssertNotEqualObjects(expected, actual, @"Expected conversion of 'Chris Is The Greatest' to equal 'NaN'.");
+}
 
 @end
