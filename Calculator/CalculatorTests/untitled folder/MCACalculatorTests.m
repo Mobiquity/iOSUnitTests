@@ -185,6 +185,16 @@
                   @"Strings are not equal %@ %@", expected,  actual);
 }
 
-
+- (void)testMCACalculator_getPi_shouldReturnPiString
+{
+    // Arrange
+    NSString *expectedResult = @"3.14159";
+    
+    // Act
+    NSString *returnedResult = [self.calculator getPiValue];
+    
+    // Asset
+    XCTAssertTrue([returnedResult isEqualToString:expectedResult], @"Pi value should be returned with 3.14159 as the value.");
+}
 
 @end

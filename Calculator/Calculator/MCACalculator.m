@@ -115,6 +115,10 @@
     [self.operands removeAllObjects];
 }
 
+- (NSString *)getPiValue {
+    return @"3.14159";
+}
+
 
 
 
