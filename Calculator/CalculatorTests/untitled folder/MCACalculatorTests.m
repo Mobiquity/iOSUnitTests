@@ -185,6 +185,63 @@
                   @"Strings are not equal %@ %@", expected,  actual);
 }
 
+    
+- (void)testMCACalculator_evaluateExponentPositiveValue_shouldEqualValueTo
+{
+    // Arrange
+    NSDecimalNumber *base = [NSDecimalNumber decimalNumberWithString:@"7"];
+    NSDecimalNumber *power = [NSDecimalNumber decimalNumberWithString:@"2"];
+    NSDecimalNumber *expected = [NSDecimalNumber decimalNumberWithString:@"49"];
+    
+    // Act
+    NSDecimalNumber *actual = [self.calculator calculateExponentBase:base raisedToPower:power];
+    
+    //Assert
+    XCTAssertEqualObjects(expected, actual, @"Expected result match actual result.");
+}
+    
+- (void)testMCACalculator_evaluateExponentNegativeValues_shouldEqualValueTo
+{
+    // Arrange
+    NSDecimalNumber *base = [NSDecimalNumber decimalNumberWithString:@"-8"];
+    NSDecimalNumber *power = [NSDecimalNumber decimalNumberWithString:@"-2"];
+    NSDecimalNumber *expected = [NSDecimalNumber decimalNumberWithString:@"0.015625"];
+    
+    // Act
+    NSDecimalNumber *actual = [self.calculator calculateExponentBase:base raisedToPower:power];
+    
+    //Assert
+    XCTAssertEqualObjects(expected, actual, @"Expected result match actual result.");
+}
+    
+- (void)testMCACalculator_evaluateExponentDecimalValues_shouldEqualValueTo
+{
+    // Arrange
+    NSDecimalNumber *base = [NSDecimalNumber decimalNumberWithString:@"6.78"];
+    NSDecimalNumber *power = [NSDecimalNumber decimalNumberWithString:@"3.5"];
+    NSDecimalNumber *expected = [NSDecimalNumber decimalNumberWithString:@"811.5289"];
+    
+    // Act
+    NSDecimalNumber *actual = [self.calculator calculateExponentBase:base raisedToPower:power];
+        
+    //Assert
+    XCTAssertEqualObjects(expected, actual, @"Expected result match actual result.");
+}
+    
+- (void)testMCACalculator_evaluateExponentZeroValues_shouldEqualValueTo
+{
+    // Arrange
+    NSDecimalNumber *base = [NSDecimalNumber decimalNumberWithString:@"0"];
+    NSDecimalNumber *power = [NSDecimalNumber decimalNumberWithString:@"0"];
+    NSDecimalNumber *expected = [NSDecimalNumber decimalNumberWithString:@"1"];
+        
+    // Act
+    NSDecimalNumber *actual = [self.calculator calculateExponentBase:base raisedToPower:power];
+        
+    //Assert
+    XCTAssertEqualObjects(expected, actual, @"Expected result match actual result.");
+}
+
 
 
 @end

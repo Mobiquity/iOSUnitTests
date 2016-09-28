@@ -13,6 +13,7 @@ typedef NS_ENUM(NSUInteger, MCAOperatorType) {
     MCAOperatorTypeSubtraction,
     MCAOperatorTypeMultiplication,
     MCAOperatorTypeDivision,
+    MCAOperatorTypeExponent,
     MCAOperatorTypeCount
 };
 
