@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,6 +7,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Gypsy Curse.ttf">
+            <string>GypsyCurse</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Calculator View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -53,56 +58,86 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pfD-sP-kNn">
                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="75"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdP-jY-IQo">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdP-jY-IQo" customClass="MCAHalloweenButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="111" height="75"/>
                                                         <color key="backgroundColor" white="0.74107663170000004" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                         <state key="normal" title="  √">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                                <integer key="value" value="0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="squarerootButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uHI-QP-FHU"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvz-I0-WeQ" userLabel="AC">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvz-I0-WeQ" userLabel="AC" customClass="MCAHalloweenButton">
                                                         <rect key="frame" x="113" y="0.0" width="111" height="75"/>
                                                         <color key="backgroundColor" white="0.74107663170163152" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                         <state key="normal" title="AC">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                                <integer key="value" value="0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="clearButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9P1-f4-7bu"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3K8-uO-9DU" userLabel="Sign change">
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3K8-uO-9DU" userLabel="Sign change" customClass="MCAHalloweenButton">
                                                         <rect key="frame" x="226" y="0.0" width="111" height="75"/>
                                                         <color key="backgroundColor" white="0.74107663170163152" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                         <state key="normal" title="+/-">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                                <integer key="value" value="0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="signChangeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wvN-r4-9Sx"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8D-tU-GRs" userLabel="Percent">
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8D-tU-GRs" userLabel="Percent" customClass="MCAHalloweenButton">
                                                         <rect key="frame" x="339" y="0.0" width="111" height="75"/>
                                                         <color key="backgroundColor" white="0.74107663170163152" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                         <state key="normal" title="%">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                                <integer key="value" value="0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFq-1H-yHP" userLabel="Divide">
-                                                <rect key="frame" x="452" y="0.0" width="149" height="75"/>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFq-1H-yHP" userLabel="Divide" customClass="MCAHalloweenButton">
+                                                <rect key="frame" x="452" y="0.0" width="148" height="75"/>
                                                 <color key="backgroundColor" red="0.98431372549999996" green="0.72156862749999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title="÷">
                                                     <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="operatorButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8fj-DT-rby"/>
                                                 </connections>
@@ -112,7 +147,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="kEa-uj-pCW">
                                         <rect key="frame" x="0.0" y="154" width="600" height="75"/>
                                         <subviews>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYE-Xc-DOt">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYE-Xc-DOt" customClass="MCAHalloweenButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="149" height="75"/>
                                                 <color key="backgroundColor" white="0.85064284673659663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -122,39 +157,63 @@
                                                 <state key="normal" title="7">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="numericInputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0GH-w0-srx"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taX-rF-6wa" userLabel="8">
-                                                <rect key="frame" x="151" y="0.0" width="149" height="75"/>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taX-rF-6wa" userLabel="8" customClass="MCAHalloweenButton">
+                                                <rect key="frame" x="151" y="0.0" width="148" height="75"/>
                                                 <color key="backgroundColor" white="0.85064284673659663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title="8">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="numericInputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yb6-cT-M6i"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyU-V5-xSm">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyU-V5-xSm" customClass="MCAHalloweenButton">
                                                 <rect key="frame" x="301" y="0.0" width="149" height="75"/>
                                                 <color key="backgroundColor" white="0.85064284673659663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title="9">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="numericInputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vaj-lL-fv1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyX-g5-mzz" userLabel="Multiply">
-                                                <rect key="frame" x="452" y="0.0" width="149" height="75"/>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyX-g5-mzz" userLabel="Multiply" customClass="MCAHalloweenButton">
+                                                <rect key="frame" x="452" y="0.0" width="148" height="75"/>
                                                 <color key="backgroundColor" red="0.98431372549999996" green="0.72156862749999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title="×">
                                                     <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="operatorButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JVK-SK-8EL"/>
                                                 </connections>
@@ -167,10 +226,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="xBd-Ug-S8N">
-                                        <rect key="frame" x="0.0" y="231" width="600" height="75"/>
+                                        <rect key="frame" x="0.0" y="231" width="600" height="74"/>
                                         <subviews>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9F-Au-b6M" userLabel="4">
-                                                <rect key="frame" x="0.0" y="0.0" width="149" height="75"/>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9F-Au-b6M" userLabel="4" customClass="MCAHalloweenButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="149" height="74"/>
                                                 <color key="backgroundColor" white="0.85064284673659663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="l9F-Au-b6M" secondAttribute="height" multiplier="1:1" priority="750" id="1dP-Qe-yKZ"/>
@@ -179,39 +238,63 @@
                                                 <state key="normal" title="4">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="numericInputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Su3-kE-GvQ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gJ-Re-ziE" userLabel="5">
-                                                <rect key="frame" x="151" y="0.0" width="149" height="75"/>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gJ-Re-ziE" userLabel="5" customClass="MCAHalloweenButton">
+                                                <rect key="frame" x="151" y="0.0" width="148" height="74"/>
                                                 <color key="backgroundColor" white="0.85064284673659663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title="5">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="numericInputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VdO-eJ-0rb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jc3-1e-TWW" userLabel="6">
-                                                <rect key="frame" x="301" y="0.0" width="149" height="75"/>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jc3-1e-TWW" userLabel="6" customClass="MCAHalloweenButton">
+                                                <rect key="frame" x="301" y="0.0" width="149" height="74"/>
                                                 <color key="backgroundColor" white="0.85064284673659663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title="6">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="numericInputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iPZ-aY-6jg"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0W-hT-LYF" userLabel="Subtract">
-                                                <rect key="frame" x="452" y="0.0" width="149" height="75"/>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0W-hT-LYF" userLabel="Subtract" customClass="MCAHalloweenButton">
+                                                <rect key="frame" x="452" y="0.0" width="148" height="74"/>
                                                 <color key="backgroundColor" red="0.98431372549999996" green="0.72156862749999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title="-">
                                                     <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="operatorButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJf-26-Aek"/>
                                                 </connections>
@@ -224,9 +307,9 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4SO-Du-zHI">
-                                        <rect key="frame" x="0.0" y="308" width="600" height="75"/>
+                                        <rect key="frame" x="0.0" y="307" width="600" height="75"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ga-pv-afN" userLabel="1">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ga-pv-afN" userLabel="1" customClass="MCAHalloweenButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="149" height="75"/>
                                                 <color key="backgroundColor" white="0.85064284670000001" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -236,39 +319,63 @@
                                                 <state key="normal" title="1">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="numericInputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F8Y-l4-ixa"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwe-Qa-Cxx" userLabel="2">
-                                                <rect key="frame" x="151" y="0.0" width="149" height="75"/>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwe-Qa-Cxx" userLabel="2" customClass="MCAHalloweenButton">
+                                                <rect key="frame" x="151" y="0.0" width="148" height="75"/>
                                                 <color key="backgroundColor" white="0.85064284670000001" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title="2">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="numericInputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nhk-yn-WFA"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ee-ev-jJ7" userLabel="3">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ee-ev-jJ7" userLabel="3" customClass="MCAHalloweenButton">
                                                 <rect key="frame" x="301" y="0.0" width="149" height="75"/>
                                                 <color key="backgroundColor" white="0.85064284670000001" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title="3">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="numericInputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WIf-7g-QWR"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEa-1d-gEj" userLabel="Add">
-                                                <rect key="frame" x="452" y="0.0" width="149" height="75"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEa-1d-gEj" userLabel="Add" customClass="MCAHalloweenButton">
+                                                <rect key="frame" x="452" y="0.0" width="148" height="75"/>
                                                 <color key="backgroundColor" red="0.98431372549999996" green="0.72156862749999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title="+">
                                                     <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="operatorButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hEK-h7-hoI"/>
                                                 </connections>
@@ -281,37 +388,55 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Vr9-XC-m3c">
-                                        <rect key="frame" x="0.0" y="385" width="600" height="75"/>
+                                        <rect key="frame" x="0.0" y="384" width="600" height="75"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxK-wS-8kk" userLabel="0">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxK-wS-8kk" userLabel="0" customClass="MCAHalloweenButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="299" height="75"/>
                                                 <color key="backgroundColor" white="0.85064284673659663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title="0">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="numericInputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IXQ-Mu-IXq"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTd-v7-fZb" userLabel="Decimal">
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTd-v7-fZb" userLabel="Decimal" customClass="MCAHalloweenButton">
                                                 <rect key="frame" x="301" y="0.0" width="149" height="75"/>
                                                 <color key="backgroundColor" white="0.85064284673659663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title=".">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="numericInputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Jg-Ab-eEH"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oba-8H-pVu" userLabel="Equals">
-                                                <rect key="frame" x="452" y="0.0" width="149" height="75"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oba-8H-pVu" userLabel="Equals" customClass="MCAHalloweenButton">
+                                                <rect key="frame" x="452" y="0.0" width="148" height="75"/>
                                                 <color key="backgroundColor" red="0.98431372549999996" green="0.72156862749999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                                 <state key="normal" title="=">
                                                     <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="equalsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BdC-be-3Mq"/>
                                                 </connections>
@@ -322,27 +447,50 @@
                                             <constraint firstItem="NxK-wS-8kk" firstAttribute="width" secondItem="MTd-v7-fZb" secondAttribute="width" multiplier="2" constant="2" id="oJA-4u-7od"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqY-GW-GEl">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Enu-Hd-px6">
                                         <rect key="frame" x="0.0" y="461" width="600" height="75"/>
-                                        <color key="backgroundColor" red="0.98431372549999996" green="0.72156862749999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                        <state key="normal" title="Wolfram Mode">
-                                            <color key="titleColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="mEY-vw-zOz" kind="presentation" modalTransitionStyle="flipHorizontal" id="3UL-CI-aIM"/>
-                                        </connections>
-                                    </button>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqY-GW-GEl" customClass="MCAHalloweenButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="452" height="75"/>
+                                                <color key="backgroundColor" red="0.98431372549999996" green="0.72156862749999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                                <state key="normal" title="Wolfram Mode">
+                                                    <color key="titleColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="mEY-vw-zOz" kind="presentation" modalTransitionStyle="flipHorizontal" id="3UL-CI-aIM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeP-O3-UPZ" customClass="MCAHalloweenButton">
+                                                <rect key="frame" x="452" y="0.0" width="148" height="75"/>
+                                                <color key="backgroundColor" red="0.98431372640000003" green="0.066096711789999998" blue="0.1059291594" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GypsyCurse" family="Gypsy Curse" pointSize="42"/>
+                                                <state key="normal" title="Scary!!">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" red="0.9843137264251709" green="0.066096711793447144" blue="0.10592915942637227" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="xBd-Ug-S8N" firstAttribute="height" secondItem="kEa-uj-pCW" secondAttribute="height" id="AMn-dM-GQA"/>
                                     <constraint firstItem="GMb-Dn-vbV" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Kpf-6K-CHP" secondAttribute="height" id="K7o-Wj-LZF"/>
                                     <constraint firstItem="kEa-uj-pCW" firstAttribute="height" secondItem="Kpf-6K-CHP" secondAttribute="height" id="MzS-cD-2j6"/>
                                     <constraint firstItem="Kpf-6K-CHP" firstAttribute="width" secondItem="xQK-pD-ml5" secondAttribute="width" id="RYU-Z5-YGC"/>
+                                    <constraint firstItem="AeP-O3-UPZ" firstAttribute="width" secondItem="Oba-8H-pVu" secondAttribute="width" id="Zeo-R1-7jI"/>
                                     <constraint firstItem="UFq-1H-yHP" firstAttribute="width" secondItem="oyX-g5-mzz" secondAttribute="width" id="fog-Dz-rAB"/>
                                     <constraint firstItem="Vr9-XC-m3c" firstAttribute="height" secondItem="4SO-Du-zHI" secondAttribute="height" id="mVO-Tt-Rfi"/>
                                     <constraint firstItem="4SO-Du-zHI" firstAttribute="height" secondItem="xBd-Ug-S8N" secondAttribute="height" id="pn7-vr-CRm"/>
-                                    <constraint firstItem="rqY-GW-GEl" firstAttribute="height" secondItem="Vr9-XC-m3c" secondAttribute="height" id="yPl-hi-qsJ"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -363,6 +511,26 @@
                     <connections>
                         <outlet property="calculatorDisplayLabel" destination="BDf-dj-ie2" id="dvE-fX-138"/>
                         <outlet property="clearButton" destination="dvz-I0-WeQ" id="FuL-pS-GqD"/>
+                        <outlet property="divisionButton" destination="UFq-1H-yHP" id="QlN-JP-biX"/>
+                        <outlet property="dotButton" destination="MTd-v7-fZb" id="TUf-5q-Mt2"/>
+                        <outlet property="eightButton" destination="taX-rF-6wa" id="TJd-Kf-cx8"/>
+                        <outlet property="equalsButton" destination="Oba-8H-pVu" id="xEW-5Q-UON"/>
+                        <outlet property="fiveButton" destination="9gJ-Re-ziE" id="GAd-vz-4in"/>
+                        <outlet property="fourButton" destination="l9F-Au-b6M" id="C3g-Zr-CE8"/>
+                        <outlet property="nineButton" destination="JyU-V5-xSm" id="Waw-43-4ED"/>
+                        <outlet property="oneButton" destination="5ga-pv-afN" id="fgX-hQ-3bb"/>
+                        <outlet property="percentageButton" destination="U8D-tU-GRs" id="HpV-1F-H98"/>
+                        <outlet property="sevenButton" destination="hYE-Xc-DOt" id="HlQ-nU-euL"/>
+                        <outlet property="signButton" destination="3K8-uO-9DU" id="vVN-qd-PqU"/>
+                        <outlet property="sixButton" destination="jc3-1e-TWW" id="D1G-pf-dSU"/>
+                        <outlet property="squareRootButton" destination="wdP-jY-IQo" id="Gl6-ku-pm6"/>
+                        <outlet property="substractButton" destination="z0W-hT-LYF" id="zYH-IN-6S6"/>
+                        <outlet property="sumButton" destination="NEa-1d-gEj" id="5NO-uK-uEl"/>
+                        <outlet property="threeButton" destination="5Ee-ev-jJ7" id="HQm-bT-Wxn"/>
+                        <outlet property="timesButton" destination="oyX-g5-mzz" id="NtP-xo-Z6j"/>
+                        <outlet property="twoButton" destination="Hwe-Qa-Cxx" id="ELS-W2-q3S"/>
+                        <outlet property="wolframButton" destination="rqY-GW-GEl" id="EfY-5Q-j8Z"/>
+                        <outlet property="zeroButton" destination="NxK-wS-8kk" id="hXw-YB-bKN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -398,10 +566,10 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="wolfram" id="7YN-3H-HOp" customClass="MCAWolframAlphaTableViewCell">
-                                        <rect key="frame" x="0.0" y="49.5" width="560" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7YN-3H-HOp" id="gB1-Az-Gtt">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpn-ps-fNZ">
