@@ -64,6 +64,12 @@
                                                                   }]];
                 break;
             }
+            case MCAOperatorTypeExponent: {
+                [operatorArray addObject:[[MCAOperator alloc] initWithPrecedence:30 operationBlock:^NSDecimalNumber * _Nonnull(NSDecimalNumber * _Nonnull operand1, NSDecimalNumber * _Nonnull operand2) {
+                    return [self.calculator calculateExponentBase:operand1 raisedToPower:operand2];
+                }]];
+                break;
+            }
         }
     }
     return operatorArray;

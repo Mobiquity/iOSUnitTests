@@ -107,6 +107,12 @@
     return radicand;
 
 }
+    
+- (NSDecimalNumber *)calculateExponentBase:(NSDecimalNumber *)base raisedToPower:(NSDecimalNumber *)power
+{
+    NSDecimal result = [[NSNumber numberWithFloat:powf([base floatValue], [power floatValue])] decimalValue];
+    return [NSDecimalNumber decimalNumberWithDecimal:result];
+}
 
 - (void)clearAllCalculatorHistory
 {

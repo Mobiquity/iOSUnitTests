@@ -21,4 +21,6 @@
 
 - (void)clearAllCalculatorHistory;
 - (NSString *)getSquareRoot: (NSString *)radicand;
+- (NSDecimalNumber *)calculateExponentBase:(NSDecimalNumber *)base raisedToPower:(NSDecimalNumber *)power;
+    
 @end
