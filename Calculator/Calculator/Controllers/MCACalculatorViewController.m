@@ -100,6 +100,11 @@
     }
 }
 
+- (IBAction)factorialButtonTapped:(id)sender {
+    self.calculatorDisplayLabel.text= [self.calculator factorial: self.calculatorDisplayLabel.text];
+    self.operandString = self.calculatorDisplayLabel.text;
+}
+
 -(void) setDisplayToZero
 {
     self.calculatorDisplayLabel.text = @"0";
