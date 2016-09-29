@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger, MCAButtonType) {
 };
 
 @interface MCAHalloweenButton : UIButton
-
-@property (nonatomic) IBInspectable BOOL isHalloweenMode;
 @property (nonatomic) IBInspectable NSInteger calculatorButtonType;
+@property (nonatomic) IBInspectable BOOL isHalloweenMode;
+
 @end

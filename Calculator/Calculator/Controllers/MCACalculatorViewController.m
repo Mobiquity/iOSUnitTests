@@ -12,6 +12,7 @@
 #import "MCAOperator.h"
 #import "MCAHalloweenButton.h"
 #import "NSString+MCAOperandStringUtils.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface MCACalculatorViewController ()
 
@@ -38,6 +39,7 @@
 @property (nonatomic, weak) IBOutlet MCAHalloweenButton *nineButton;
 @property (nonatomic, weak) IBOutlet MCAHalloweenButton *zeroButton;
 @property (nonatomic, weak) IBOutlet MCAHalloweenButton *wolframButton;
+@property (nonatomic, weak) IBOutlet UIImageView *haloweenSurprise;
 
 
 @property (nonatomic, copy) NSString *operandString;
@@ -45,6 +47,8 @@
 @property (nonatomic, strong) MCACalculator *calculator;
 @property (nonatomic, strong) NSMutableArray<MCAOperator *> *operators;
 @property (nonatomic, assign) BOOL isHalloweendModeOn;
+@property (nonatomic, retain) IBOutletCollection(MCAHalloweenButton) NSArray *buttons;
+
 
 
 @end
@@ -57,8 +61,7 @@
     self.calculator = [[MCACalculator alloc] init];
     self.operators = [self createOperators];
     self.isHalloweendModeOn = NO;
-    [self.clearButton setIsHalloweenMode:YES];
-    [self.squareRootButton setIsHalloweenMode:YES];
+    [self changeHalloweenMode:NO];
 
 }
 
@@ -175,6 +178,14 @@
             [self.calculator clearAllCalculatorHistory];
             result = [self.calculator pushOperator:self.operators[sender.tag] withOperand:[self.calculatorDisplayLabel.text mca_toOperandNumber]];
         }
+        //HALLOWEEN SURPRISE
+        if (result == nil) {
+            self.haloweenSurprise.hidden = NO;
+            NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Howie-scream" ofType:@"mp3"];
+            SystemSoundID soundID;
+            AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:soundPath], &soundID);
+            AudioServicesPlaySystemSound(soundID);
+        }
         self.operandString = nil;
         self.calculatorDisplayLabel.text = [NSString mca_stringFromOperandNumber:result];
     }
@@ -196,10 +207,17 @@
 - (IBAction)halloweenButtonTapped:(UIButton *)sender
 {
     [self changeHalloweenMode:!self.isHalloweendModeOn];
+    self.isHalloweendModeOn = !self.isHalloweendModeOn;
 }
 -(void)changeHalloweenMode:(BOOL)isHalloween
 {
-    
+    for (MCAHalloweenButton * button in self.buttons)
+    {
+        button.isHalloweenMode = isHalloween;
+    }
+    self.calculatorDisplayLabel.font = isHalloween? [UIFont fontWithName:@"Gypsy Curse" size:52]: [UIFont fontWithName:@"HelveticaNeue-Light" size:52];
+    self.calculator.isHalloweenMode = isHalloween;
+    self.haloweenSurprise.hidden = YES;
 }
 
 -(IBAction)unwindToCalculatorViewController:(UIStoryboardSegue *)sender {}

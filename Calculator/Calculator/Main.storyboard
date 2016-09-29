@@ -447,11 +447,11 @@
                                             <constraint firstItem="NxK-wS-8kk" firstAttribute="width" secondItem="MTd-v7-fZb" secondAttribute="width" multiplier="2" constant="2" id="oJA-4u-7od"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Enu-Hd-px6">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Enu-Hd-px6">
                                         <rect key="frame" x="0.0" y="461" width="600" height="75"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqY-GW-GEl" customClass="MCAHalloweenButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="452" height="75"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="450" height="75"/>
                                                 <color key="backgroundColor" red="0.98431372549999996" green="0.72156862749999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                                 <state key="normal" title="Wolfram Mode">
@@ -471,13 +471,19 @@
                                                 <rect key="frame" x="452" y="0.0" width="148" height="75"/>
                                                 <color key="backgroundColor" red="0.98431372640000003" green="0.066096711789999998" blue="0.1059291594" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="GypsyCurse" family="Gypsy Curse" pointSize="42"/>
-                                                <state key="normal" title="Scary!!">
+                                                <state key="normal" title="Scary">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" red="0.9843137264251709" green="0.066096711793447144" blue="0.10592915942637227" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHalloweenMode" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="calculatorButtonType">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="halloweenButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kNf-Nm-bOB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -498,8 +504,11 @@
                                     </mask>
                                 </variation>
                             </stackView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="death" translatesAutoresizingMaskIntoConstraints="NO" id="lhk-68-SIV">
+                                <rect key="frame" x="42" y="268" width="304" height="304"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xQK-pD-ml5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Amn-qY-VJT"/>
                             <constraint firstItem="xQK-pD-ml5" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="HLW-gu-kcy"/>
@@ -517,6 +526,7 @@
                         <outlet property="equalsButton" destination="Oba-8H-pVu" id="xEW-5Q-UON"/>
                         <outlet property="fiveButton" destination="9gJ-Re-ziE" id="GAd-vz-4in"/>
                         <outlet property="fourButton" destination="l9F-Au-b6M" id="C3g-Zr-CE8"/>
+                        <outlet property="haloweenSurprise" destination="lhk-68-SIV" id="w7K-j6-MeB"/>
                         <outlet property="nineButton" destination="JyU-V5-xSm" id="Waw-43-4ED"/>
                         <outlet property="oneButton" destination="5ga-pv-afN" id="fgX-hQ-3bb"/>
                         <outlet property="percentageButton" destination="U8D-tU-GRs" id="HpV-1F-H98"/>
@@ -531,6 +541,28 @@
                         <outlet property="twoButton" destination="Hwe-Qa-Cxx" id="ELS-W2-q3S"/>
                         <outlet property="wolframButton" destination="rqY-GW-GEl" id="EfY-5Q-j8Z"/>
                         <outlet property="zeroButton" destination="NxK-wS-8kk" id="hXw-YB-bKN"/>
+                        <outletCollection property="buttons" destination="wdP-jY-IQo" id="jg6-42-kR6"/>
+                        <outletCollection property="buttons" destination="dvz-I0-WeQ" id="dwW-AI-wbs"/>
+                        <outletCollection property="buttons" destination="3K8-uO-9DU" id="DEf-jt-dC3"/>
+                        <outletCollection property="buttons" destination="U8D-tU-GRs" id="H14-g9-b4Q"/>
+                        <outletCollection property="buttons" destination="UFq-1H-yHP" id="tsN-6e-S9F"/>
+                        <outletCollection property="buttons" destination="hYE-Xc-DOt" id="ISa-tn-Sgh"/>
+                        <outletCollection property="buttons" destination="taX-rF-6wa" id="cn7-Aq-dJI"/>
+                        <outletCollection property="buttons" destination="JyU-V5-xSm" id="IcD-Hk-z1k"/>
+                        <outletCollection property="buttons" destination="oyX-g5-mzz" id="UnX-BY-pb4"/>
+                        <outletCollection property="buttons" destination="l9F-Au-b6M" id="Qcd-vz-eo4"/>
+                        <outletCollection property="buttons" destination="9gJ-Re-ziE" id="FBX-pe-g4W"/>
+                        <outletCollection property="buttons" destination="jc3-1e-TWW" id="RTW-lL-vtg"/>
+                        <outletCollection property="buttons" destination="z0W-hT-LYF" id="PyB-X6-Hez"/>
+                        <outletCollection property="buttons" destination="5ga-pv-afN" id="vZs-Gc-BYy"/>
+                        <outletCollection property="buttons" destination="Hwe-Qa-Cxx" id="HuO-u7-SOc"/>
+                        <outletCollection property="buttons" destination="5Ee-ev-jJ7" id="772-PG-MwU"/>
+                        <outletCollection property="buttons" destination="NEa-1d-gEj" id="zE6-r6-NO9"/>
+                        <outletCollection property="buttons" destination="NxK-wS-8kk" id="Mzt-TF-s3W"/>
+                        <outletCollection property="buttons" destination="MTd-v7-fZb" id="mkZ-rO-pn6"/>
+                        <outletCollection property="buttons" destination="Oba-8H-pVu" id="nxo-fz-GNi"/>
+                        <outletCollection property="buttons" destination="rqY-GW-GEl" id="FXV-VG-Y3b"/>
+                        <outletCollection property="buttons" destination="AeP-O3-UPZ" id="NI9-KE-k1h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -645,4 +677,7 @@
             <point key="canvasLocation" x="608" y="1038"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="death" width="488" height="512"/>
+    </resources>
 </document>

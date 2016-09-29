@@ -21,11 +21,11 @@
 
 -(void)setIsHalloweenMode:(BOOL)isHalloweenMode
 {
-    NSLog(self.titleLabel.text);
+
     _isHalloweenMode = isHalloweenMode;
-    if (isHalloweenMode)
+    if (!isHalloweenMode)
     {
-        self.titleLabel.font = [UIFont fontWithName:@"Thin" size:42];
+        self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
         switch (_calculatorButtonType) {
             case MCAButtonTopGrayType:
                 self.backgroundColor = [UIColor darkGrayColor];
@@ -44,6 +44,11 @@
                 break;
                 
             default:
+                self.backgroundColor = [UIColor redColor];
+                [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                [self setTitleColor:[UIColor yellowColor] forState:UIControlStateHighlighted];
+                [self setTitle:@"Scary" forState:UIControlStateNormal];
+                self.titleLabel.font = [UIFont fontWithName:@"Gypsy Curse" size:42];
                 break;
         }
 
@@ -68,7 +73,13 @@
                 [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
                 break;
                 
-            default:
+            default://ScaryButton
+                self.backgroundColor = [UIColor grayColor];
+                [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                [self setTitleColor:[UIColor yellowColor] forState:UIControlStateHighlighted];
+                [self setTitle:@"Boring" forState:UIControlStateNormal];
+                self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
+
                 break;
         }
 

@@ -25,6 +25,7 @@
 - (IBAction)clearButtonTapped:(id)sender;
 - (IBAction)operatorButtonTapped:(UIButton *)sender;
 - (NSMutableArray *)createOperators;
+- (IBAction)halloweenButtonTapped:(UIButton *)sender;
 @end
 
 @interface CalculatorTests : MCABaseTestCase
@@ -194,5 +195,23 @@
     [self.calculatorViewController operatorButtonTapped:unknownOperatorButton];
 }
 
+
+#pragma mark - Adriana Ormaetxea
+
+- (void)testMCACalculatorViewController_halloweenButtonTappedWhenBoringModeOn_makesCalculatorHallowingModeOn
+{
+    // Arrange
+    id mockCalculator = [OCMockObject niceMockForClass:[MCACalculator class]];
+    [[mockCalculator expect] setIsHalloweenMode:YES];
+    
+    self.calculatorViewController.calculator = mockCalculator;
+    
+    // Act
+    [self.calculatorViewController halloweenButtonTapped:nil];
+    
+    //Assert
+    [mockCalculator verify];
+
+}
 
 @end
