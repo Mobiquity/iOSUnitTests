@@ -108,6 +108,17 @@
 
 }
 
+
+-(NSString *)factorial:(NSString *)operand {
+    if ([operand floatValue] >= 0) {
+        operand = [NSString stringWithFormat: @"%f",tgammaf([operand floatValue] + 1)];
+    } else {
+        operand = @"Error";
+    }
+    
+    return operand;
+}
+
 - (void)clearAllCalculatorHistory
 {
     self.expressionComplete = NO;

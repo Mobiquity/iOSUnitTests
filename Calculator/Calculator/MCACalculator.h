@@ -21,4 +21,5 @@
 
 - (void)clearAllCalculatorHistory;
 - (NSString *)getSquareRoot: (NSString *)radicand;
+-(NSString *)factorial:(NSString *)operand;
 @end

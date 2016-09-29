@@ -185,6 +185,53 @@
                   @"Strings are not equal %@ %@", expected,  actual);
 }
 
+-(void) testMCACalculator_factorialPositiveNumber_shouldSetValueTo {
+    // Arrange
+    NSString *expected = @"24.000000";
+    
+    // Act
+    NSString *actual = [self.calculator factorial:@"4"];
+    
+    //Assert
+    XCTAssertTrue([actual isEqualToString:expected],
+                  @"Factorial Positive - Strings are not equal %@ %@", expected,  actual);
+}
+
+-(void) testMCACalculator_factorialPositiveRealNumber_shouldSetValueTo {
+    // Arrange
+    NSString *expected = @"52.342777";
+    
+    // Act
+    NSString *actual = [self.calculator factorial:@"4.5"];
+    
+    //Assert
+    XCTAssertTrue([actual isEqualToString:expected],
+                  @"Factorial Positive RealNumber - Strings are not equal %@ %@", expected,  actual);
+}
+
+-(void) testMCACalculator_factorialZeroNumber_shouldSetValueTo {
+    // Arrange
+    NSString *expected = @"1.000000";
+    
+    // Act
+    NSString *actual = [self.calculator factorial:@"0.0"];
+    
+    //Assert
+    XCTAssertTrue([actual isEqualToString:expected],
+                  @"Factorial Zero Number - Strings are not equal %@ %@", expected,  actual);
+}
+
+-(void) testMCACalculator_factorialNegativeNumber_shouldSetValueTo {
+    // Arrange
+    NSString *expected = @"Error";
+    
+    // Act
+    NSString *actual = [self.calculator factorial:@"-5.0"];
+    
+    //Assert
+    XCTAssertTrue([actual isEqualToString:expected],
+                  @"Factorial Negative Number - Strings are not equal %@ %@", expected,  actual);
+}
 
 
 @end
