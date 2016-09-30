@@ -316,6 +316,17 @@
                                                     <action selector="equalsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BdC-be-3Mq"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLB-zp-oah">
+                                                <rect key="frame" x="452" y="0.0" width="149" height="73"/>
+                                                <color key="backgroundColor" red="0.98431372549999996" green="0.72156862749999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
+                                                <state key="normal" title="X2">
+                                                    <color key="titleColor" red="0.96078431369999995" green="0.97254901959999995" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="squaredButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hZt-4f-TB4"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Oba-8H-pVu" firstAttribute="width" secondItem="MTd-v7-fZb" secondAttribute="width" id="n59-1I-I9f"/>
