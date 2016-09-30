@@ -139,6 +139,11 @@
     self.calculatorDisplayLabel.text = [NSString mca_stringFromOperandNumber:result];
 }
 
+- (IBAction)squaredButtonTapped:(id)sender {
+    self.calculatorDisplayLabel.text = [self.calculator getSquare:self.calculatorDisplayLabel.text];
+    self.operandString = self.calculatorDisplayLabel.text;
+}
+
 -(IBAction)unwindToCalculatorViewController:(UIStoryboardSegue *)sender {}
 
 @end

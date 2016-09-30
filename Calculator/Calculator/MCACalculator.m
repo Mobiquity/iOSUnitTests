@@ -96,6 +96,7 @@
     
 }
 
+
 - (void)clearAllCalculatorHistory
 {
     self.expressionComplete = NO;
@@ -103,5 +104,10 @@
     [self.operands removeAllObjects];
 }
 
+- (NSString *)getSquare: (NSString *)squaredNum
+{
+    squaredNum = [NSString stringWithFormat:@"%f", ([squaredNum floatValue] * [squaredNum floatValue])];
+    return squaredNum;
+}
 
 @end
