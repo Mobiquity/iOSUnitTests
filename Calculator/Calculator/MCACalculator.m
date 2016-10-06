@@ -36,6 +36,10 @@
 
 -(NSDecimalNumber *)pushOperator:(MCAOperator *)operator withOperand:(NSDecimalNumber *)operand
 {
+    if (self.isHalloweenMode && ([operand compare:[NSNumber numberWithInt:666]]== NSOrderedSame))
+    {
+        return nil;
+    }
     NSDecimalNumber *retObj = operand;
     MCAOperator *previousOperator = [self.operators lastObject];
     [self.operands addObject:operand];
@@ -115,7 +119,9 @@
     [self.operands removeAllObjects];
 }
 
-
-
+-(void)setIsHalloweenMode:(BOOL)isHalloweenMode
+{
+    _isHalloweenMode = isHalloweenMode;
+}
 
 @end

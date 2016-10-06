@@ -10,18 +10,46 @@
 
 #import "MCACalculator.h"
 #import "MCAOperator.h"
-
+#import "MCAHalloweenButton.h"
 #import "NSString+MCAOperandStringUtils.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface MCACalculatorViewController ()
 
 @property (nonatomic, weak) IBOutlet UILabel *calculatorDisplayLabel;
-@property (nonatomic, weak) IBOutlet UIButton *clearButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *clearButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *squareRootButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *acButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *signButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *percentageButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *divisionButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *timesButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *substractButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *sumButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *equalsButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *dotButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *oneButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *twoButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *threeButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *fourButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *fiveButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *sixButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *sevenButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *eightButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *nineButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *zeroButton;
+@property (nonatomic, weak) IBOutlet MCAHalloweenButton *wolframButton;
+@property (nonatomic, weak) IBOutlet UIImageView *haloweenSurprise;
+
 
 @property (nonatomic, copy) NSString *operandString;
 
 @property (nonatomic, strong) MCACalculator *calculator;
 @property (nonatomic, strong) NSMutableArray<MCAOperator *> *operators;
+@property (nonatomic, assign) BOOL isHalloweendModeOn;
+@property (nonatomic, retain) IBOutletCollection(MCAHalloweenButton) NSArray *buttons;
+
+
 
 @end
 
@@ -32,6 +60,9 @@
     [super viewDidLoad];
     self.calculator = [[MCACalculator alloc] init];
     self.operators = [self createOperators];
+    self.isHalloweendModeOn = NO;
+    [self changeHalloweenMode:NO];
+
 }
 
 - (NSMutableArray *)createOperators {
@@ -147,6 +178,14 @@
             [self.calculator clearAllCalculatorHistory];
             result = [self.calculator pushOperator:self.operators[sender.tag] withOperand:[self.calculatorDisplayLabel.text mca_toOperandNumber]];
         }
+        //HALLOWEEN SURPRISE
+        if (result == nil) {
+            self.haloweenSurprise.hidden = NO;
+            NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Howie-scream" ofType:@"mp3"];
+            SystemSoundID soundID;
+            AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:soundPath], &soundID);
+            AudioServicesPlaySystemSound(soundID);
+        }
         self.operandString = nil;
         self.calculatorDisplayLabel.text = [NSString mca_stringFromOperandNumber:result];
     }
@@ -163,6 +202,22 @@
     }
     self.operandString = nil;
     self.calculatorDisplayLabel.text = [NSString mca_stringFromOperandNumber:result];
+}
+
+- (IBAction)halloweenButtonTapped:(UIButton *)sender
+{
+    [self changeHalloweenMode:!self.isHalloweendModeOn];
+    self.isHalloweendModeOn = !self.isHalloweendModeOn;
+}
+-(void)changeHalloweenMode:(BOOL)isHalloween
+{
+    for (MCAHalloweenButton * button in self.buttons)
+    {
+        button.isHalloweenMode = isHalloween;
+    }
+    self.calculatorDisplayLabel.font = isHalloween? [UIFont fontWithName:@"Gypsy Curse" size:52]: [UIFont fontWithName:@"HelveticaNeue-Light" size:52];
+    self.calculator.isHalloweenMode = isHalloween;
+    self.haloweenSurprise.hidden = YES;
 }
 
 -(IBAction)unwindToCalculatorViewController:(UIStoryboardSegue *)sender {}

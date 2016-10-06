@@ -12,6 +12,7 @@
 @interface MCACalculator : NSObject
 
 @property (nonatomic, readonly, getter=isExpressionComplete) BOOL expressionComplete;
+@property (nonatomic) BOOL isHalloweenMode;
 
 - (NSDecimalNumber *)pushOperator:(MCAOperator *)operator withOperand:(NSDecimalNumber *)operand;
 - (NSDecimalNumber *)pushOperand:(NSDecimalNumber *)operand;
@@ -21,4 +22,5 @@
 
 - (void)clearAllCalculatorHistory;
 - (NSString *)getSquareRoot: (NSString *)radicand;
+-(void)setIsHalloweenMode:(BOOL)isHalloweenMode;
 @end

@@ -186,5 +186,56 @@
 }
 
 
+#pragma mark - Adriana Oemaetxea
+- (void)testMCACalculator_pushOperatorWithHalloweenOperandInHalloweenMode_shouldReturnNil
+{
+    
+    // Arrange
+    self.calculator.expressionComplete = NO;
+    self.calculator.isHalloweenMode = YES;
+    
+    MCAOperator *highPrecedenceOperator = [[MCAOperator alloc] initWithPrecedence:10 operationBlock:^NSDecimalNumber * _Nonnull(NSDecimalNumber * _Nonnull operand1, NSDecimalNumber * _Nonnull operand2) {
+        return [NSDecimalNumber zero];
+    }];
+    
+    MCAOperator *lowPrecendenceOperator = [[MCAOperator alloc] initWithPrecedence:5 operationBlock:^NSDecimalNumber * _Nonnull(NSDecimalNumber * _Nonnull operand1, NSDecimalNumber * _Nonnull operand2) {
+        return [NSDecimalNumber zero];
+    }];
+    
+    self.calculator.operators = [NSMutableArray arrayWithObjects:highPrecedenceOperator, nil];
+    
+     // Act
+    NSDecimalNumber * resultNumber =[self.calculator pushOperator:lowPrecendenceOperator withOperand:[NSDecimalNumber decimalNumberWithString:@"666"]];
+    
+    
+    //Assert
+    XCTAssertTrue(resultNumber == nil, @"Expected push operand 666 with operator in HalloweenMode to return nil.");
+
+}
+
+- (void)testMCACalculator_pushOperatorWithHalloweenOperandInHalloweenMode_shouldNotReturnNil
+{
+    // Arrange
+    self.calculator.expressionComplete = NO;
+    self.calculator.isHalloweenMode = NO;
+    
+    MCAOperator *highPrecedenceOperator = [[MCAOperator alloc] initWithPrecedence:10 operationBlock:^NSDecimalNumber * _Nonnull(NSDecimalNumber * _Nonnull operand1, NSDecimalNumber * _Nonnull operand2) {
+        return [NSDecimalNumber zero];
+    }];
+    
+    MCAOperator *lowPrecendenceOperator = [[MCAOperator alloc] initWithPrecedence:5 operationBlock:^NSDecimalNumber * _Nonnull(NSDecimalNumber * _Nonnull operand1, NSDecimalNumber * _Nonnull operand2) {
+        return [NSDecimalNumber zero];
+    }];
+    
+    self.calculator.operators = [NSMutableArray arrayWithObjects:highPrecedenceOperator, nil];
+    
+    // Act
+    NSDecimalNumber * resultNumber =[self.calculator pushOperator:lowPrecendenceOperator withOperand:[NSDecimalNumber decimalNumberWithString:@"666"]];
+    
+    
+    //Assert
+    XCTAssertTrue(resultNumber != nil, @"Expected push operand 666 with operator in HalloweenMode to NOT return nil.");
+}
+
 
 @end
