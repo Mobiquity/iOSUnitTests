@@ -108,6 +108,13 @@
 
 }
 
+- (NSDecimalNumber *)calculateCosineForAngle:(NSDecimalNumber *)angle
+{
+    
+        double result = cos([angle doubleValue] * M_PI/180);
+        return  [[NSDecimalNumber alloc]initWithDouble:result];
+}
+
 - (void)clearAllCalculatorHistory
 {
     self.expressionComplete = NO;

@@ -100,6 +100,16 @@
     }
 }
 
+- (IBAction)cosineButtonTapped:(id)sender
+{
+   
+    NSDecimalNumber *result  = [self.calculator calculateCosineForAngle: [NSDecimalNumber  decimalNumberWithString:self.calculatorDisplayLabel.text ] ];
+    
+    self.calculatorDisplayLabel.text = [NSString stringWithFormat:@"%f",[result doubleValue]];
+    self.operandString = self.calculatorDisplayLabel.text;
+
+}
+
 -(void) setDisplayToZero
 {
     self.calculatorDisplayLabel.text = @"0";
