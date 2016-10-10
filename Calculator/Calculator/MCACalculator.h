@@ -21,4 +21,6 @@
 
 - (void)clearAllCalculatorHistory;
 - (NSString *)getSquareRoot: (NSString *)radicand;
+- (NSDecimalNumber *)calculateCosineForAngle:(NSDecimalNumber *)angle ;
+
 @end

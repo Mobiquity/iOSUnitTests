@@ -185,6 +185,71 @@
                   @"Strings are not equal %@ %@", expected,  actual);
 }
 
+- (void)testMCACalculator_evaluateCosinePositiveValue_shouldEqualValueTo
+{
+        // Arrange
+        NSDecimalNumber *angel = [NSDecimalNumber decimalNumberWithString:@"45"];
+        NSDecimalNumber *expected = [NSDecimalNumber decimalNumberWithString:@"0.7071067811865476096"];
+    
+        // Act
+        NSDecimalNumber *actual = [self.calculator calculateCosineForAngle:angel ];
+    
+        //Assert
+        XCTAssertEqualObjects(expected, actual, @"Expected result match actual result.");
+}
+
+- (void)testMCACalculator_evaluateCosineNegativeValuesQuadrant2_shouldEqualValueTo
+{
+    // Arrange
+    NSDecimalNumber *angel = [NSDecimalNumber decimalNumberWithString:@"150"];
+    NSDecimalNumber *expected = [NSDecimalNumber decimalNumberWithString:@"-0.8660254037844388864"];
+    
+    // Act
+    NSDecimalNumber *actual = [self.calculator calculateCosineForAngle:angel ];
+    
+    //Assert
+    XCTAssertEqualObjects(expected, actual, @"Expected result match actual result.");
+}
+
+- (void)testMCACalculator_evaluateCosineNegativeValuesQuadrant3_shouldEqualValueTo
+{
+    // Arrange
+    NSDecimalNumber *angel = [NSDecimalNumber decimalNumberWithString:@"210"];
+    NSDecimalNumber *expected = [NSDecimalNumber decimalNumberWithString:@"-0.8660254037844385792"];
+    
+    // Act
+    NSDecimalNumber *actual = [self.calculator calculateCosineForAngle:angel ];
+    
+    //Assert
+    XCTAssertEqualObjects(expected, actual, @"Expected result match actual result.");
+}
+
+- (void)testMCACalculator_evaluateCosineNegativeValuesQuadrant4_shouldEqualValueTo
+{
+    // Arrange
+    NSDecimalNumber *angel = [NSDecimalNumber decimalNumberWithString:@"330"];
+    NSDecimalNumber *expected = [NSDecimalNumber decimalNumberWithString:@"0.8660254037844385792"];
+    
+    // Act
+    NSDecimalNumber *actual = [self.calculator calculateCosineForAngle:angel ];
+    
+    //Assert
+    XCTAssertEqualObjects(expected, actual, @"Expected result match actual result.");
+}
+
+
+- (void)testMCACalculator_evaluateCosineZeroValue_shouldEqualValueTo
+{
+    // Arrange
+    NSDecimalNumber *angel = [NSDecimalNumber decimalNumberWithString:@"0"];
+    NSDecimalNumber *expected = [NSDecimalNumber decimalNumberWithString:@"1"];
+    
+    // Act
+    NSDecimalNumber *actual = [self.calculator calculateCosineForAngle:angel ];
+    
+    //Assert
+    XCTAssertEqualObjects(expected, actual, @"Expected result match actual result.");
+}
 
 
 @end
