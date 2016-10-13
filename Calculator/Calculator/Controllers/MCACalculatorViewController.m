@@ -166,7 +166,7 @@
 }
 
 - (IBAction)squaredButtonTapped:(id)sender {
-    self.calculatorDisplayLabel.text = [self.calculator getSquare:self.calculatorDisplayLabel.text];
+    self.calculatorDisplayLabel.text = [self.calculator squareNumber:self.calculatorDisplayLabel.text];
     self.operandString = self.calculatorDisplayLabel.text;
 }
 

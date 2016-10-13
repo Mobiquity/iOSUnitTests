@@ -116,10 +116,24 @@
     [self.operands removeAllObjects];
 }
 
-- (NSString *)getSquare: (NSString *)squaredNum
+- (NSString *)squareNumber:(NSString *)numberToSquare
 {
-    squaredNum = [NSString stringWithFormat:@"%f", ([squaredNum floatValue] * [squaredNum floatValue])];
-    return squaredNum;
+    if (numberToSquare == nil) {
+        return @"ERROR";
+    }
+    NSScanner *scan = [NSScanner scannerWithString: numberToSquare];
+    [scan setCharactersToBeSkipped:[[NSCharacterSet characterSetWithCharactersInString:@"1234567890."] invertedSet]];
+    float f;
+    if ([scan scanFloat:&f]) {
+        return @"NaN";
+    }
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+    NSDecimalNumber* numberToSquareDecimalNumber = [NSDecimalNumber decimalNumberWithString: numberToSquare];
+//    numberToSquare = [NSString stringWithFormat:@"%f", [numberToSquare doubleValue] * [numberToSquare doubleValue]];
+    numberToSquare = [NSString stringWithFormat:@"%@", [numberToSquareDecimalNumber decimalNumberByMultiplyingBy:numberToSquareDecimalNumber]];
+    [numberFormatter numberFromString:numberToSquare];
+    return numberToSquare;
 }
 
 
