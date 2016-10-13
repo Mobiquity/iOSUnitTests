@@ -121,15 +121,14 @@
     if (numberToSquare == nil) {
         return @"ERROR";
     }
-    NSScanner *scan = [NSScanner scannerWithString: numberToSquare];
-    [scan setCharactersToBeSkipped:[[NSCharacterSet characterSetWithCharactersInString:@"1234567890."] invertedSet]];
-    float f;
-    if ([scan scanFloat:&f]) {
+    NSCharacterSet *characterSet = [[NSCharacterSet characterSetWithCharactersInString:@"1234567890-."] invertedSet];
+    NSRange range = [numberToSquare rangeOfCharacterFromSet:characterSet];
+    if (range.location != NSNotFound) {
         return @"NaN";
     }
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
-    NSDecimalNumber* numberToSquareDecimalNumber = [NSDecimalNumber decimalNumberWithString: numberToSquare];
+    NSDecimalNumber *numberToSquareDecimalNumber = [NSDecimalNumber decimalNumberWithString: numberToSquare];
     numberToSquare = [NSString stringWithFormat:@"%@", [numberToSquareDecimalNumber decimalNumberByMultiplyingBy:numberToSquareDecimalNumber]];
     [numberFormatter numberFromString:numberToSquare];
     return numberToSquare;
