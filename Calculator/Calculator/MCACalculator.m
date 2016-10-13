@@ -130,7 +130,6 @@
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     NSDecimalNumber* numberToSquareDecimalNumber = [NSDecimalNumber decimalNumberWithString: numberToSquare];
-//    numberToSquare = [NSString stringWithFormat:@"%f", [numberToSquare doubleValue] * [numberToSquare doubleValue]];
     numberToSquare = [NSString stringWithFormat:@"%@", [numberToSquareDecimalNumber decimalNumberByMultiplyingBy:numberToSquareDecimalNumber]];
     [numberFormatter numberFromString:numberToSquare];
     return numberToSquare;
