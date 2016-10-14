@@ -161,6 +161,7 @@
     XCTAssertTrue([actual isEqualToString:expected],
                   @"Strings are not equal %@ %@", expected,  actual);
 }
+
 -(void) testMCACalculator_squareRootPositiveRealNumber_shouldSetValueToSquareRoot{
     // Arrange
     NSString *expected = @"8.800000";
@@ -169,9 +170,9 @@
     NSString *actual = [self.calculator getSquareRoot:@"77.44"];
     
     //Assert
-    XCTAssertTrue([actual isEqualToString:expected],
-                  @"Strings are not equal %@ %@", expected,  actual);
+    XCTAssertEqualObjects(actual, expected);
 }
+
 -(void) testMCACalculator_squareRootZeroNumber_shouldSetValueToSquareRoot{
     // Arrange
     NSString *expected = @"0.000000";
@@ -181,10 +182,84 @@
     
     
     //Assert
-    XCTAssertTrue([actual isEqualToString:expected],
-                  @"Strings are not equal %@ %@", expected,  actual);
+    XCTAssertEqualObjects(actual, expected);
 }
 
+- (void)testMCACalculator_squareZero_shouldSetValueToSquared {
+    // Arrange
+    NSString *expected = @"0";
+    
+    // Act
+    NSString *actual = [self.calculator squareNumber: @"0"];
+    
+    // Assert
+    XCTAssertEqualObjects(actual, expected);
+}
 
+- (void)testMCACalculator_squareNil_shouldReturnValueAsError {
+    // Arrange
+    NSString *expected = @"ERROR";
+    
+    // Act
+    NSString *actual = [self.calculator squareNumber: nil];
+    
+    // Assert
+    XCTAssertEqualObjects(actual, expected);
+}
+
+- (void)testMCACalculator_squareGarbageInput_shouldReturnValueAsNaN {
+    // Arrange
+    NSString *expected = @"NaN";
+    
+    // Act
+    NSString *actual = [self.calculator squareNumber: @"1234CA$HMONEY"];
+    
+    // Assert
+    XCTAssertEqualObjects(actual, expected);
+}
+
+- (void)testMCACalculator_squarePositiveIntNumber_shouldSetValueToSquared {
+    // Arrange
+    NSString *expected = @"81";
+    
+    // Act
+    NSString *actual = [self.calculator squareNumber: @"9"];
+    
+    // Assert
+    XCTAssertEqualObjects(actual, expected);
+}
+
+- (void)testMCACalculator_squarePositiveRealNumber_shouldSetValueToSquared {
+    // Arrange
+    NSString *expected = @"9.755982312750190521";
+    
+    // Act
+    NSString *actual = [self.calculator squareNumber: @"3.123456789"];
+    
+    // Assert
+    XCTAssertEqualObjects(actual, expected);
+}
+
+- (void)testMCACalculator_squareNegativeIntNumber_shouldSetValueToSquared {
+    // Arrange
+    NSString *expected = @"49";
+    
+    // Act
+    NSString *actual = [self.calculator squareNumber: @"-7"];
+    
+    // Assert
+    XCTAssertEqualObjects(actual, expected);
+}
+
+- (void)testMCACalculator_squareNegativeRealNumber_shouldSetValueToSquared {
+    // Arrange
+    NSString *expected = @"50.743625383936";
+    
+    // Act
+    NSString *actual = [self.calculator squareNumber: @"-7.123456"];
+    
+    // Assert
+    XCTAssertEqualObjects(actual, expected);
+}
 
 @end

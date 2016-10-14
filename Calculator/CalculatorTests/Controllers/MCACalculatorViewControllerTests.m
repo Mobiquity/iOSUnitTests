@@ -24,6 +24,7 @@
 - (IBAction)numericInputButtonTapped:(id)sender;
 - (IBAction)clearButtonTapped:(id)sender;
 - (IBAction)operatorButtonTapped:(UIButton *)sender;
+- (IBAction)squaredButtonTapped:(UIButton *)sender;
 - (NSMutableArray *)createOperators;
 @end
 
@@ -193,6 +194,5 @@
     //Assert
     [self.calculatorViewController operatorButtonTapped:unknownOperatorButton];
 }
-
 
 @end
