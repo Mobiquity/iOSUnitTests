@@ -126,7 +126,7 @@
     if (range.location != NSNotFound) {
         return @"NaN";
     }
-    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    static NSNumberFormatter *numberFormatter;
     numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     NSDecimalNumber *numberToSquareDecimalNumber = [NSDecimalNumber decimalNumberWithString: numberToSquare];
     numberToSquare = [NSString stringWithFormat:@"%@", [numberToSquareDecimalNumber decimalNumberByMultiplyingBy:numberToSquareDecimalNumber]];
